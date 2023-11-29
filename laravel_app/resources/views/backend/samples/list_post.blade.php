@@ -1,4 +1,4 @@
-<div class="row table-responsive">
+<div class="table-responsive">
     <div class="col-xs-12">
         <div>
             <table class="table table-bordered" width="100%" cellspacing="0">

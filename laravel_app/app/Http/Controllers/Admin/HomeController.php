@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Settings;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -78,4 +79,58 @@ class HomeController extends Controller {
 		Auth::logout();
 		return Redirect::route('admin_login');
     }
+
+	public function settings(){
+		$Settings = new Settings();
+
+		$set = $Settings->select_field_by_key('QUOTE_NO_PREFIX');
+		$this->param['QUOTE_NO_PREFIX'] = @$set[0]->value;
+
+		$set = $Settings->select_field_by_key('QUOTE_NO_POSTFIX');
+		$this->param['QUOTE_NO_POSTFIX'] = @$set[0]->value;
+
+		$this->param['date_formate'] = Config::get('constant.DATE_FORMATE');
+		return view('backend.settings',$this->param);
+	}
+	public function settings_post(){
+		if(isset($_POST['quote_no_prefix']) ){
+			$Settings = new Settings();
+
+			$exist = $Settings->select_field_by_key('QUOTE_NO_PREFIX');
+			if(isset($exist[0]->id)){
+				$Settings->update_setting($exist[0]->id,[
+					'value' => $_POST['quote_no_prefix'],
+					'modify_date' => date('d-m-Y h:i:s A'),
+				]);
+			}else{
+				$Settings->insert_setting([
+					'key' => 'QUOTE_NO_PREFIX',
+					'value' => $_POST['quote_no_prefix'],
+					'add_date' => date('d-m-Y h:i:s A'),
+				]);
+			}
+		}
+		if(isset($_POST['quote_no_postfix']) ){
+			$Settings = new Settings();
+
+			$exist = $Settings->select_field_by_key('QUOTE_NO_POSTFIX');
+			if(isset($exist[0]->id)){
+				$Settings->update_setting($exist[0]->id,[
+					'value' => $_POST['quote_no_postfix'],
+					'modify_date' => date('d-m-Y h:i:s A'),
+				]);
+			}else{
+				$Settings->insert_setting([
+					'key' => 'QUOTE_NO_POSTFIX',
+					'value' => $_POST['quote_no_postfix'],
+					'add_date' => date('d-m-Y h:i:s A'),
+				]);
+			}
+		}
+
+		Session::put('SUCCESS','TRUE');
+		Session::put('MESSAGE','Settings updated successfully.');
+		return redirect()->back();
+	}
+
 }

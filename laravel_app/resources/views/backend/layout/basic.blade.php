@@ -22,6 +22,13 @@
     <script src="{{asset('asset_be/vendor/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('asset_be/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
+    <link rel="stylesheet" type="text/css" href="{{asset('asset_be/custom/bootstrap-toastr/toastr.min.css')}}"/>
+    <script src="{{asset('asset_be/custom/bootstrap-toastr/toastr.min.js')}}"></script>
+
+    <style>
+        .pagination{ justify-content: center !important;}
+    </style>
+
 </head>
 
 <body id="page-top">

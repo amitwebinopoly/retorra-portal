@@ -43,4 +43,8 @@ class FeHomeController extends Controller {
 		Auth::logout();
 		return Redirect::route('fe_home');
 	}
+
+	public function test_mail(){
+		echo 'hi';
+	}
 }

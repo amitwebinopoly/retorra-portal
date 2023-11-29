@@ -39,22 +39,22 @@
         </a>
     </li>
 
-    <li class="nav-item sb_check_active" data-route="">
-        <a class="nav-link" href="">
+    <li class="nav-item sb_check_active" data-route="list_user,add_user,edit_user">
+        <a class="nav-link" href="{{route('list_user')}}">
             <i class="fas fa-fw fa-users"></i>
             <span>Users</span>
         </a>
     </li>
 
-    <li class="nav-item sb_check_active" data-route="">
-        <a class="nav-link" href="">
+    <li class="nav-item sb_check_active" data-route="list_quote">
+        <a class="nav-link" href="{{route('list_quote')}}">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Quotes</span>
         </a>
     </li>
 
     <li class="nav-item sb_check_active" data-route="">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="#">
             <i class="fas fa-fw fa-list"></i>
             <span>Orders</span>
         </a>
@@ -64,6 +64,13 @@
         <a class="nav-link" href="{{route('list_sample')}}">
             <i class="fas fa-fw fa-table"></i>
             <span>Samples</span>
+        </a>
+    </li>
+
+    <li class="nav-item sb_check_active" data-route="settings">
+        <a class="nav-link" href="{{route('settings')}}">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Settings</span>
         </a>
     </li>
 

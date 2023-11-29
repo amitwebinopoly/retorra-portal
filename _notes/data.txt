@@ -1,0 +1,21 @@
+https://retorra-rugs.myshopify.com/
+nik@webinopoly.com / Requested@80
+
+- check for territory (showroom) API
+- check for customers ( designers) API exclude territory (showroom) 
+- When we import above all data in our database maintain flag for each as new user with 1 value and show send invite button in user list for super admin
+- When we click on send invite it should send email to user with email / random password
+
+Quickbook Login
+https://app.qbo.intuit.com/app/homepage
+Sean@theoldstate.com / RedLeader1!
+hello@webinopoly.com / Requested@84
+
+Production Base URL:https://quickbooks.api.intuit.com
+Sandbox Base URL:https://sandbox-quickbooks.api.intuit.com
+
+Client ID: ABh84ojNdw3FNHu5VEv1JZoIq14WdIF8QvARwYrQSlTuFbkANl
+Client Secret: XuPdzhqKN7b5H1eqzgbvcQ1we1gCa4hpcfQJobuv
+
+ezofficeinventory.com login
+sean@tronic.app / RedLeader1!
