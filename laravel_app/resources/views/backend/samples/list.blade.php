@@ -2,6 +2,11 @@
 
 @section('content')
     <link href="{{asset('asset_be/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
+    <style>
+        .pagination_section_search_keyword{
+            display: none;
+        }
+    </style>
 
     <div class="container-fluid">
 

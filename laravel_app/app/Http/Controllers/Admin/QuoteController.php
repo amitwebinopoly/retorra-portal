@@ -203,8 +203,8 @@ class QuoteController extends Controller {
         if( (isset($_REQUEST['keyword']))&&(!empty($_REQUEST['keyword'])) ){
             $keyword=$InexController->allow_special_character_in_keyword($_REQUEST['keyword']);
         }
-        if( (isset($_REQUEST['current_page']))&&(!empty($_REQUEST['current_page'])) ){
-            $current_page=$_REQUEST['current_page'];
+        if( (isset($_REQUEST['page']))&&(!empty($_REQUEST['page'])) ){
+            $current_page=$_REQUEST['page'];
         }
         $start=($current_page-1)*$rows;
         $end=$rows;

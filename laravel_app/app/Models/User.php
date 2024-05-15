@@ -68,16 +68,22 @@ class User extends Authenticatable
             ->where('id',$id)
             ->get()->toArray();
     }
+    public function select_fields_by_email($email,$fields='*'){
+        return DB::table($this->table)
+            ->select($fields)
+            ->where('email',$email)
+            ->get()->toArray();
+    }
 
     public function count_all($keyword){
         $cond_keyword = '';
         if(isset($keyword) && !empty($keyword)){
-            /*$cond_keyword = "AND (
-                    cu_name LIKE '%$keyword%' OR
-                    cu_email LIKE '%$keyword%' OR
-                    cu_mobile LIKE '%$keyword%' OR
-                    cu_subject LIKE '%$keyword%'
-                )"; */
+            $cond_keyword = "AND (
+                first_name LIKE '%$keyword%' OR
+                last_name LIKE '%$keyword%' OR
+                email LIKE '%$keyword%' OR
+                role = '$keyword'
+            )";
         }
         /*$cond_start_end = "";
         if(isset($this->start_date) && !empty($this->start_date) && isset($this->end_date) && !empty($this->end_date)){
@@ -96,12 +102,12 @@ class User extends Authenticatable
     public function select_all($start,$end,$keyword,$sort_field='',$sort_type=''){
         $cond_keyword = '';
         if(isset($keyword) && !empty($keyword)){
-            /*$cond_keyword = "AND (
-                    cu_name LIKE '%$keyword%' OR
-                    cu_email LIKE '%$keyword%' OR
-                    cu_mobile LIKE '%$keyword%' OR
-                    cu_subject LIKE '%$keyword%'
-                )"; */
+            $cond_keyword = "AND (
+                first_name LIKE '%$keyword%' OR
+                last_name LIKE '%$keyword%' OR
+                email LIKE '%$keyword%' OR
+                role = '$keyword'
+            )";
         }
         /*$cond_start_end = "";
         if(isset($this->start_date) && !empty($this->start_date) && isset($this->end_date) && !empty($this->end_date)){

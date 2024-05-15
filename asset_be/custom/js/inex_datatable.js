@@ -79,7 +79,7 @@ function set_pagenation_button(total_page,record_count,sr_start,sr_end){
 
     var out = '';
 
-    out += '<div style="display: none;"><span>Showing '+sr_start+' To '+sr_end+' of '+record_count+' Records.</span></div>';
+    out += '<div><span>Showing '+sr_start+' To '+sr_end+' of '+record_count+' Records</span></div>';
     out += '<ul class="pagination">';
 
     // previous
@@ -159,7 +159,7 @@ $.fn.InexDataTable = function(url,csrf_token,filter_ids_arr,function_before_ajax
     html += '</select>';
     html += '</div>';
 
-    html += '<div class="pull-right" style="display:none;">';
+    html += '<div class="pull-right pagination_section_search_keyword">';
     html += '<div class="form-group">';
     html += '<input class="form-control" type="text" placeholder="Search" id="pagination_search_keyword" style="width:200px;">';
     html += '</div>';

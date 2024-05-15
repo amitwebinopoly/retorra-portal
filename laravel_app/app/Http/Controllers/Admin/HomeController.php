@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Quotes;
 use App\Models\Settings;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -62,14 +63,19 @@ class HomeController extends Controller {
 
 	public function admin_home(){
 		$User = new User();
+		$Quotes = new Quotes();
 
-		/*$User->set_role('Admin');
-		$count_all = $User->count_all('');
+		$count_all = $User->count_all('Admin');
 		$this->param['count_admin'] = $count_all[0]->count;
 
-		$User->set_role('User');
-		$count_all = $User->count_all('');
-		$this->param['count_user'] = $count_all[0]->count;*/
+		$count_all = $User->count_all('Designer');
+		$this->param['count_designer'] = $count_all[0]->count;
+
+		$count_all = $User->count_all('Showroom');
+		$this->param['count_showroom'] = $count_all[0]->count;
+
+		$count_all = $Quotes->count_all('');
+		$this->param['count_quote'] = $count_all[0]->count;
 
 		$this->param['date_formate'] = Config::get('constant.DATE_FORMATE');
 		return view('backend.home',$this->param);

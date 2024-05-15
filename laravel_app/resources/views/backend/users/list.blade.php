@@ -61,11 +61,20 @@
      });*/
 
     $("#sync_customer_qb_btn").click(async function(){
+        let original_text = $("#sync_customer_qb_btn").html();
+        $("#sync_customer_qb_btn").html('Processing...').attr('disabled','true');
+
         const rawResponse = await fetch('{{route('sync_qb_customers')}}', {
             method: 'GET'
         });
         const obj = await rawResponse.json();
-        console.log(obj);
+
+        $("#sync_customer_qb_btn").html(original_text).removeAttr('disabled');
+        if(obj.SUCCESS == 'TRUE'){
+            toastr.success(obj.MESSAGE);
+        }else{
+            toastr.error(obj.MESSAGE);
+        }
     });
 
 
