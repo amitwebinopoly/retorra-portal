@@ -1,0 +1,1032 @@
+{% liquid
+  assign button_text = section.settings.button_text
+  assign button_link = section.settings.button_link
+  assign contact = section.settings.contact
+  assign builder_text = section.settings.builder_text
+  assign sub_title = section.settings.sub_title
+  assign sub_text = section.settings.sub_text
+
+  assign product_type = product.type
+  assign additional = product.metafields.meta.additional
+  assign weave = product.metafields.meta.weave
+  assign fiber = product.metafields.meta.fiber
+
+  assign collection = collections['all-rug-designs']
+  assign svg_code = product.metafields.builder.svg_code
+
+  assign svg_rectangle = product.metafields.builder.svg_rectangle
+  assign svg_rectangleURl = product.metafields.accentuate.svg_rectangle_url
+  assign image_rectangle = product.metafields.accentuate.image_rectangle
+
+  assign svg_square = product.metafields.builder.svg_square
+  assign svg_squareURL = product.metafields.accentuate.svg_square_url
+  assign image_square = product.metafields.accentuate.image_square
+
+  assign svg_circle = product.metafields.builder.svg_circle
+  assign svg_circleURL = product.metafields.accentuate.svg_circle_url
+  assign image_circle = product.metafields.accentuate.image_circle_new
+
+  assign svg_runner = product.metafields.builder.svg_runner
+  assign svg_runnerURL = product.metafields.accentuate.svg_runner_url
+  assign image_runner = product.metafields.accentuate.image_runner
+
+  assign is_background_not_blank = true
+  assign show_price = customer.metafields.customer_fields.hide_price
+
+  if customer.id == blank
+    assign is_background_not_blank = false
+  endif
+
+  assign colors = product.metafields.builder.colors | plus: 0
+  assign color_titles = shop.metafields.globals.color_titles
+  assign color_hexes = shop.metafields.globals.color_hex
+%}
+
+{% assign customerHasTag = false %}
+{% assign customerHasTagPrice = false %}
+
+{% for tag in customer.tags %}
+  {% if tag contains 'price' %}
+    {% assign customerHasTagPrice = true %}
+  {% endif %}
+{% endfor %}
+{% if customer.id != blank %}
+  {% assign customerHasTag = true %}
+{% endif %}
+
+{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'product-builder.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'accordion.js' | asset_url }}" defer="defer"></script>
+
+<div class="product">
+  <div data-entrance="fade" class="product__container">
+    <div class="product__wrapper">
+      <div class="product__media">
+        {% if is_background_not_blank %}
+          <div class="js-product-builder-svg-wrap-style hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              version="1.1"
+              x="0px"
+              y="0px"
+              viewBox="0 0 900 900"
+              style="enable-background:new 0 0 900 900;"
+              xml:space="preserve"
+            >
+              <style type="text/css">
+              </style>
+            </svg>
+          </div>
+
+          <div class="product__svg-wrapper js-product-builder-svg-wrapper">
+            <div class="hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                version="1.1"
+                x="0px"
+                y="0px"
+                viewBox="0 0 900 900"
+                style="enable-background:new 0 0 900 900;"
+                xml:space="preserve"
+              >
+                <style type="text/css">
+                </style>
+              </svg>
+            </div>
+
+            <div class="product__gallery-image-wrapper">
+              <img
+                class="product__gallery-image"
+                src="{{ product.featured_image | image_url: width: 1200 }}"
+                alt="{{ product.featured_image.alt }}"
+              >
+            </div>
+          </div>
+
+          {% if svg_rectangleURl != blank %}
+            <div
+              data-shape="Rectangle"
+              class="product__svg-wrapper hidden js-product-builder-svg-wrapper"
+              data-shapeurl="{{ svg_rectangleURl }}"
+              data-image="{{ image_rectangle }}"
+            >
+              {% comment %}
+                {{- svg_rectangle  | remove: '../' | replace: 'url_RC', image_rectangle  | replace: 'Artboard 11.png', image_rectangle -}}
+              {% endcomment %}
+              {% render 'icon-placeholder' %}
+            </div>
+          {% endif %}
+
+          {% if svg_squareURL != blank %}
+            <div
+              data-shape="Square"
+              class="product__svg-wrapper hidden js-product-builder-svg-wrapper"
+              data-shapeurl="{{ svg_squareURL }}"
+              data-image="{{ image_square }}"
+            >
+              {% comment %}
+                {{- svg_square   | remove: '../' | replace: 'url_SQ', image_square  | replace: 'Artboard 11.png', image_square -}}
+              {% endcomment %}
+              {% render 'icon-placeholder' %}
+            </div>
+          {% endif %}
+
+          {% if svg_circleURL != blank %}
+            <div
+              data-shape="Circle"
+              class="product__svg-wrapper hidden js-product-builder-svg-wrapper"
+              data-shapeurl="{{ svg_circleURL }}"
+              data-image="{{ image_circle }}"
+            >
+              {% comment %}
+                {{- svg_circle  | remove: '../' | replace: 'url_CR', image_circle  | replace: 'Artboard 11.png', image_circle -}}
+              {% endcomment %}
+              {% render 'icon-placeholder' %}
+            </div>
+          {% endif %}
+
+          {% if svg_runnerURL != blank %}
+            <div
+              data-shape="Runner"
+              class="product__svg-wrapper hidden js-product-builder-svg-wrapper"
+              data-shapeurl="{{ svg_runnerURL }}"
+              data-image="{{ image_runner }}"
+            >
+              {% comment %}
+                {{- svg_runner   | remove: '../' | replace: 'url_RN', image_runner | replace: 'Artboard 11.png', image_runner -}}
+              {% endcomment %}
+              {% render 'icon-placeholder' %}
+            </div>
+          {% endif %}
+        {% else %}
+          <div class="product__gallery-image-wrapper">
+            <img
+              class="product__gallery-image"
+              src="{{ product.featured_image | image_url: width: 1200 }}"
+              alt="{{ product.featured_image.alt }}"
+            >
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="product__content">
+        <h2 class="product__content_type">{{ 'products.product.worth_walking_on' | t }}</h2>
+
+        <h1 class="product__content_title">{{ product.title }}</h1>
+
+        {% if customerHasTag and builder_text != blank %}
+          <p class="product__builder-text">
+            {{- builder_text -}}
+          </p>
+        {% endif %}
+
+        {% if customerHasTag %}
+          <div class="product__builder">
+            <div class="product__builder-body">
+              <product-builder data-background-not-blank="{% if is_background_not_blank %}false{% else %}true{% endif %}">
+                {% form 'product', product, id: 'ProductForm', class: 'js-product-builder-form' %}
+                  <input type="hidden" name="id" value="{{- product.first_available_variant.id -}}">
+
+                  {% if form.posted_successfully? %}
+                    <div class="product__builder-success">
+                      {{ 'products.product.thanks_for_contacting_us' | t }}
+                    </div>
+                  {% endif %}
+
+                  {%- if form.errors -%}
+                    <div class="form__message">
+                      <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
+                        {% render 'icon-error' %}
+                        {{ 'templates.contact.form.error_heading' | t }}
+                      </h2>
+                    </div>
+                    <ul class="form-status-list caption-large" role="list">
+                      <li>
+                        <a href="#ContactForm-email" class="link">
+                          {{ form.errors.translated_fields.email | capitalize }}
+                          {{ form.errors.messages.email }}
+                        </a>
+                      </li>
+                    </ul>
+                  {%- endif -%}
+
+                  {% if customerHasTagPrice != false %}
+                    <div class="print-hidden {% unless show_price %} hidden{%endunless%}">
+                      <h3 class="product__builder-group-label space-pricing">
+                        <strong>Price per <em>SQUARE FOOT</em>:</strong>
+                        <span class="product__builder-group-label-additional js-product-starting-price">
+                          {{ cart.currency.symbol }}
+                          <em></em>
+                        </span>
+                      </h3>
+                      <p class="product__builder-info">{{ 'products.product.price_will_update' | t }}</p>
+                    </div>
+                  {% endif %}
+
+                  {% assign meterialSize = product.metafields.accentuate.meterials.size | minus: 1 %}
+
+                  {% if meterialSize > -1 %}
+                    <div class="product__builder-group-wrapper product__builder-material">
+                      <h3 class="product__builder-group-label">{{ 'products.product.select_materials' | t }}</h3>
+
+                      <div class="product__builder-group">
+                        {% for i in (0..meterialSize) %}
+                          <div class="product__builder-item-wrapper">
+                            <label
+                              for="material-{{ product.metafields.accentuate.meterials[i].material | handleize }}"
+                              class=""
+                            >
+                              <input
+                                name="material"
+                                id="material-{{ product.metafields.accentuate.meterials[i].material | handleize }}"
+                                value="{{ product.metafields.accentuate.meterials[i].material | handleize }}"
+                                data-price="{{ product.metafields.accentuate.meterials[i].price }}"
+                                class="product__builder-item-input js-product-builder-input"
+                                type="radio"
+                                {% if forloop.first %}
+                                  checked
+                                {% endif %}
+                              >
+                              <span class="product__builder-fake-input"></span>
+
+                              {{ product.metafields.accentuate.meterials[i].material }}
+                            </label>
+                          </div>
+                        {% endfor %}
+                      </div>
+                    </div>
+                  {% endif %}
+
+                  <div class="product__builder-group-wrapper product__builder-shape {% unless svg_squareURL != blank or svg_circleURL != blank or svg_runnerURL != blank or svg_rectangleURl != blank %}visually-hidden{% endunless %}">
+                    <h3 class="product__builder-group-label">{{ 'products.product.select_shape' | t }}</h3>
+
+                    <div class="product__builder-group">
+                      <div class="product__builder-item-wrapper {% if svg_rectangleURl == blank or image_rectangle == blank  %} visually-hidden{% endif %}">
+                        <input
+                          name="shape"
+                          data-title="RC"
+                          id="shape-Rectangle"
+                          value="Rectangle"
+                          class="hidden product__builder-item-input js-product-builder-input"
+                          type="radio"
+                        >
+
+                        <label for="shape-Rectangle" class="product__builder-item">
+                          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 31">
+                            <rect  fill="none" stroke="#404041" stroke-miterlimit="10" class="cls-1sq" x="8" y="-7" width="30" height="45" transform="translate(38.5 -7.5) rotate(90)"></rect>
+                          </svg>
+                        </label>
+
+                        <span class="product__builder-item-caption">
+                          {{ 'products.product.rectangle' | t }}
+                        </span>
+                      </div>
+
+                      <div class="product__builder-item-wrapper {% unless svg_squareURL != blank %} visually-hidden {% endunless %}">
+                        <input
+                          name="shape"
+                          data-title="SQ"
+                          id="shape-Square"
+                          value="Square"
+                          class="hidden product__builder-item-input js-product-builder-input"
+                          type="radio"
+                        >
+
+                        <label for="shape-Square" class="product__builder-item">
+                          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 41">
+                            <rect fill="none" stroke="#404041" stroke-miterlimit="10" class="cls-1" x=".5" y=".5" width="40" height="40"></rect>
+                          </svg>
+                        </label>
+
+                        <span class="product__builder-item-caption">
+                          {{ 'products.product.square' | t }}
+                        </span>
+                      </div>
+
+                      <div class="product__builder-item-wrapper {% unless svg_circleURL != blank %} visually-hidden {% endunless %}">
+                        <input
+                          name="shape"
+                          data-title="CR"
+                          id="shape-Circle"
+                          value="Circle"
+                          class="hidden product__builder-item-input js-product-builder-input"
+                          type="radio"
+                        >
+
+                        <label for="shape-Circle" class="product__builder-item">
+                          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.9 45.9">
+                            <rect fill="none" stroke="#404041" stroke-miterlimit="10" class="cls-1" x=".5" y=".5" width="44.9" height="44.9" rx="22.45" ry="22.45"></rect>
+                          </svg>
+                        </label>
+
+                        <span class="product__builder-item-caption">
+                          {{ 'products.product.circle' | t }}
+                        </span>
+                      </div>
+
+                      <div class="product__builder-item-wrapper {% if svg_runnerURL == blank %} visually-hidden{% endif %}">
+                        <input
+                          name="shape"
+                          data-title="RN"
+                          id="shape-Runner"
+                          value="Runner"
+                          class="hidden product__builder-item-input js-product-builder-input"
+                          type="radio"
+                        >
+
+                        <label for="shape-Runner" class="product__builder-item">
+                          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 21">
+                            <rect  fill="none" stroke="#404041" stroke-miterlimit="10" class="cls-1" x="13" y="-12" width="20" height="45" transform="translate(33.5 -12.5) rotate(90)"></rect>
+                          </svg>
+                        </label>
+
+                        <span class="product__builder-item-caption">
+                          {{ 'products.product.runner' | t }}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {% if colors != blank and colors > 0 %}
+                    <div class="product__builder-group-wrapper product__builder-colors">
+                      <h3 class="product__builder-group-label  print-hidden">
+                        {{ 'products.product.choose_your_colorway' | t }}
+                      </h3>
+
+                      {% assign color_hexes_poms = 'rgb(142,126,126), rgb(146,127,110), rgb(172,164,153), rgb(142,120,106), rgb(106,96,100), rgb(209,153,156), rgb(73,81,102), rgb(25,30,42), rgb(130,132,149), rgb(202,202,193), rgb(179,200,206), rgb(131,147,74), rgb(58,69,37), rgb(13,23,4), rgb(111,91,55), rgb(138,110,40), rgb(188,108,71), rgb(79,58,46), rgb(180,107,122), rgb(133,78,104), rgb(112,98,97), rgb(103,82,65), rgb(153,141,134), rgb(112,88,82), rgb(88,76,78), rgb(201,140,145), rgb(64,72,95), rgb(20,24,41), rgb(38,41,62), rgb(177,175,163), rgb(175,199,205), rgb(97,115,43), rgb(219,216,196), rgb(39,63,37), rgb(82,68,42), rgb(197,179,115), rgb(153,77,54), rgb(55,42,34), rgb(128,60,75), rgb(159,97,84), rgb(95,80,80), rgb(80,63,47), rgb(138,126,121), rgb(230,225,219), rgb(83,73,74), rgb(193,123,132), rgb(45,55,74), rgb(202,202,208), rgb(120,116,143), rgb(168,170,159), rgb(171,184,160), rgb(50,65,26), rgb(152,142,117), rgb(93,106,78), rgb(61,50,31), rgb(99,77,29), rgb(129,50,45), rgb(145,90,57), rgb(133,75,88), rgb(127,69,65), rgb(76,64,64), rgb(53,43,34), rgb(121,104,94), rgb(186,172,154), rgb(55,49,51), rgb(188,93,104), rgb(30,42,61), rgb(132,135,151), rgb(80,79,111), rgb(92,98,85), rgb(122,147,117), rgb(35,55,18), rgb(121,113,85), rgb(66,79,51), rgb(183,186,167), rgb(155,116,49), rgb(82,35,38), rgb(104,66,47), rgb(107,54,66), rgb(90,46,50), rgb(72,57,57), rgb(196,188,172), rgb(108,94,85), rgb(175,162,141), rgb(244,231,228), rgb(146,38,51), rgb(180,186,201), rgb(85,93,116), rgb(172,180,191), rgb(67,77,62), rgb(72,88,61), rgb(148,159,62), rgb(94,85,66), rgb(178,176,146), rgb(153,160,137), rgb(128,97,46), rgb(247,236,157), rgb(128,66,43), rgb(207,158,162), rgb(177,112,115), rgb(43,32,37), rgb(191,183,166), rgb(77,63,54), rgb(159,142,117), rgb(236,221,216), rgb(200,112,122), rgb(91,128,170), rgb(54,69,86), rgb(142,145,164), rgb(49,58,47), rgb(40,65,37), rgb(132,145,38), rgb(56,54,33), rgb(143,141,97), rgb(133,147,117), rgb(100,70,27), rgb(218,158,18), rgb(95,45,41), rgb(120,67,81), rgb(159,77,89), rgb(86,70,65), rgb(185,176,159), rgb(66,53,45), rgb(152,136,112), rgb(232,216,208), rgb(237,183,183), rgb(71,94,135), rgb(49,57,78), rgb(126,132,146), rgb(44,51,44), rgb(32,53,28), rgb(62,164,202), rgb(65,58,37), rgb(99,97,61), rgb(73,84,56), rgb(196,181,149), rgb(239,242,181), rgb(221,162,146), rgb(96,53,63), rgb(113,53,61), rgb(71,58,56), rgb(154,142,124), rgb(55,48,42), rgb(117,97,79), rgb(226,207,200), rgb(190,99,116), rgb(52,70,108), rgb(33,46,65), rgb(111,117,123), rgb(19,25,16), rgb(94,121,102), rgb(197,218,206), rgb(197,185,156), rgb(64,58,26), rgb(65,83,53), rgb(197,176,141), rgb(222,208,80), rgb(181,115,96), rgb(239,224,194), rgb(86,36,47), rgb(58,48,47), rgb(121,107,91), rgb(241,239,236), rgb(108,86,68), rgb(214,188,177), rgb(227,197,189), rgb(123,136,168), rgb(23,34,56), rgb(92,96,108), rgb(12,18,13), rgb(71,103,83), rgb(138,187,183), rgb(160,145,116), rgb(48,46,20), rgb(52,67,35), rgb(183,152,100), rgb(170,160,43), rgb(173,96,82), rgb(220,198,156), rgb(141,61,63), rgb(57,45,47), rgb(97,78,61), rgb(227,221,209), rgb(105,84,65), rgb(196,165,157), rgb(171,159,159), rgb(74,86,128), rgb(23,37,57), rgb(78,85,90), rgb(112,119,142), rgb(49,79,60), rgb(75,147,125), rgb(133,118,84), rgb(164,164,117), rgb(30,42,20), rgb(124,88,52), rgb(142,122,28), rgb(112,52,51), rgb(189,165,123), rgb(107,41,51), rgb(46,35,41), rgb(54,41,33), rgb(194,181,163), rgb(68,53,46), rgb(215,196,189, rgb(155,143,143), rgb(155,45,58), rgb(126,136,153), rgb(65,70,78), rgb(12,13,24), rgb(0,43,43), rgb(110,160,161), rgb(93,79,50), rgb(151,154,97), rgb(24,38,13), rgb(202,195,160), rgb(198,169,108), rgb(200,116,77), rgb(141,108,65), rgb(91,34,43), rgb(51,40,45), rgb(40,31,26), rgb(174,155,138), rgb(205,199,190), rgb(155,130,121), rgb(133,120,122), rgb(217,172,178), rgb(93,102,120), rgb(44,46,57), rgb(63,70,95), rgb(22,44,37), rgb(75,136,141), rgb(78,67,39), rgb(81,86,46), rgb(22,36,11), rgb(164,146,100), rgb(170,137,48), rgb(133,58,35), rgb(99,74,47), rgb(224,180,181), '
+                        | split: ', '
+                      %}
+                      {% assign color_titles_poms = 'AB08, AD07, AE10, AG03, AJ06, AS11, BK04, BM02, BR08, CA12, CF11, CM08, CP02, CT01, DA05, DF03, DN09, DT02, EG09, ET07, AB07, AD05, AE08, AG01, AJ04, AS10, BK03, BM01, BR03, CA10, CF10, CM06, CO12, CS05, DA03, DE09, DN07, DT01, EG07, EJ07, AB06, AD04, AE07, AF12, AJ03, AS09, BK02, BL12, BQ08, CA09, CD10, CM04, CO08, CR06, DA01, DE03, DN05, DS03, EF05, EJ05, AB05, AD02, AE06, AF11, AJ01, AS08, BK01, BL09, BQ06, CA06, CD08, CM02, CO06, CR04, CT12, DD05, DN01, DS01, EF04, EJ03, AB04, AC11, AE05, AF10, AI11, AS05, BJ12, BL07, BP11, CA05, CD06, CK04, CO04, CQ09, CT11, DC05, DI09, DQ03, EC09, EI07, AB02, AC10, AE04, AF08, AI10, AR07, BI07, BL05, B010, CA04, CD03, CK02, CO02, CQ07, CT09, DC03, DH06, DQ01, EB05, EI05, AA10, AC09, AE03, AF07, AI09, AO11, BG06, BL04, BM08, CA03, CD01, CJ07, CO01, CQ05, CT07, DB11, DG09, DP09, EB04, EI03, AA09, AC07, AE02, AF06, AI08, AM07, BG04, BL03, BM07, CA02, CC05, CI11, CN11, CQ03, CT06, DB08, DG05, DP07, DT12, EI01, AA08, AC06, AD12, AF05, AI07, AL12, BD10, BL02, BM06, CA01, CC04, CI08, CN09, CQ02, CT05, DB06, DG03, DP05, DT10, EH06, AA07, AC04, AD11, AF04, AI06, AJ10, BC07, BL01, BM05, BT11, CC02, CH06, CN07, CP09, CT04, DB04, DG01, DP03, DT08, EH04, AA06, AC03, AD09, AF02, AG12, AJ09, AT05, BK07, BM04, BT01, CB03, CG09, CN04, CP07, CT03, DA10, DF07, DO05, DT06, EH03, AA05, AC02, AD08, AE12, AG06, AJ07, AS12, BK05, BM03, BS05, CB02, CG07, CN02, CP04, CT02, DA07, DF04, DO02, DT04, EG11'
+                        | split: ', '
+                      %}
+
+                      <div class="color-grid-wrapper js-product-builder-color-swatches-wrapper  print-hidden">
+                        {% unless is_background_not_blank %}
+                          <input
+                            name="properties[Color-1]"
+                            id="color-1"
+                            type="hidden"
+                            class="product__builder-color-input js-product-builder-color-input js-product-builder-input active native_arm_pom_color"
+                          >
+                        {% endunless %}
+
+                        {% for i in (1..colors) %}
+                          {% unless is_background_not_blank %}
+                            {% assign color_index = forloop.index | plus: 1 %}
+                          {% else %}
+                            {% assign color_index = forloop.index | plus: 0 %}
+                          {% endunless %}
+
+                          <input
+                            name="properties[Color-{{- color_index -}}]"
+                            id="color-{{- color_index -}}"
+                            type="hidden"
+                            class="product__builder-color-input js-product-builder-color-input js-product-builder-input {% if color_index == 0 %}active{% endif %} native_arm_pom_color"
+                          >
+                        {% endfor %}
+
+                        {% for i in (0..11) %}
+                          <div class="color-grid-wrapper-row">
+                            {% for j in (0..19) %}
+                              {% assign mod = i | times: 20 %}
+                              {% assign grid_index = j | plus: mod %}
+                              {% assign color_title = color_titles_poms[grid_index] %}
+                              {% assign color_hex = color_hexes_poms[grid_index] %}
+
+                              <div
+                                data-title="{{- color_title -}}"
+                                data-value="{{- color_hex -}}"
+                                class="color-grid-wrapper-col js-color-swatch-grid-item js-product-builder-color-swatch"
+                              >
+                                {% comment %} whitespace needed for element height {% endcomment %}
+                              </div>
+                            {% endfor %}
+                          </div>
+                        {% endfor %}
+
+                        <div class="color-grid-wrapper-row hidden">
+                          <div
+                            data-title="custom Color"
+                            data-value="customColor"
+                            class="color-grid-wrapper-col js-color-swatch-grid-item js-color-swatch-grid-item-custom js-product-builder-color-swatch"
+                          >
+                            {% comment %} whitespace needed for element height {% endcomment %}
+                          </div>
+                        </div>
+                      </div>
+
+                      {%- capture contentForQuerystring -%}{{ content_for_header }}{%- endcapture -%}
+                      {%- assign pageUrl = contentForQuerystring
+                        | split: '"pageurl":"'
+                        | last
+                        | split: '"'
+                        | first
+                        | split: '.myshopify.com'
+                        | last
+                        | replace: '\/', '/'
+                        | replace: '%20', ' '
+                        | replace: '\u0026', '&'
+                        | split: '?'
+                        | first
+                      -%}
+
+                      <div class="product__builder-clear-color  print-hidden">
+                        <a href="{{ pageUrl }}" class="js-clear-color-choice product__builder-info">
+                          {{- 'products.product.clear_color_choices' | t -}}
+                        </a>
+                      </div>
+
+                      <h3 class="product__builder-group-label space-pricing">
+                        {{ 'products.product.select_above_ars' | t }}
+                      </h3>
+
+                      <div class="product__builder-group js-sku-parts">
+                        {% unless is_background_not_blank %}
+                          <div class="product__builder-item-wrapper">
+                            <label
+                              for="color-1"
+                              data-color-index="color-1"
+                              class="product__builder-item pom-selector light-border js-product-builder-color-selector active"
+                            >
+                              <span class="product__builder-item-numeric"> 1 </span>
+                            </label>
+
+                            <span
+                              class="product__builder-item-caption color-code-caption"
+                              data-color-label-index="color-1"
+                            ></span>
+                          </div>
+                        {% endunless %}
+
+                        {% for i in (1..colors) %}
+                          {% unless is_background_not_blank %}
+                            {% assign color_index = forloop.index | plus: 1 %}
+                          {% else %}
+                            {% assign color_index = forloop.index | plus: 0 %}
+                          {% endunless %}
+
+                          <div class="product__builder-item-wrapper">
+                            <label
+                              for="color-{{- color_index -}}"
+                              data-color-index="color-{{- color_index -}}"
+                              class="product__builder-item pom-selector light-border js-product-builder-color-selector {% if color_index == 0 %}active{% endif %}"
+                            >
+                              <span class="product__builder-item-numeric">
+                                {{- color_index -}}
+                              </span>
+                            </label>
+
+                            <span
+                              class="product__builder-item-caption color-code-caption"
+                              data-color-label-index="color-{{- color_index -}}"
+                            ></span>
+                          </div>
+                        {% endfor %}
+
+                        {% comment %}
+                          {% unless is_background_not_blank %}
+                            <custom-accordion class="product__builder-additional js-product-builder-color-swatches-wrapper">
+                              <div class="custom-select js-accordion-toggle">
+                                <input name="properties[Color-1]" id="color-1" type="hidden" class="product__builder-color-input js-product-builder-color-input js-product-builder-input">
+
+                                <div class="custom-select__select">Select Color 1</div>
+
+                                {% render 'icon-color-select' %}
+                              </div>
+
+                              <div class="product__builder-color-swatches-wrapper js-accordion-content">
+                                <div class="product__builder-color-swatches-container">
+                                  <input type="text" placeholder="Enter an ARS Number and Press Enter" class="product__builder-color-swatches-input js-product-builder-color-swatches-input">
+
+                                  <div class="product__builder-color-swatches-grid js-color-swatch-grid">
+                                    {% for color_hex in color_hexes %}
+                                      {% liquid
+                                        assign current_index = forloop.index0
+                                        assign color_title = color_titles[current_index]
+                                      %}
+
+                                      {% if color_hex != blank and color_title != blank %}
+                                        <div data-title="{{- color_title -}}" class="product__builder-color-swatch js-color-swatch-grid-item">
+                                          <button type="button" style="background-color: {{ color_hex }}" data-title="{{- color_title -}}" data-value="{{- color_hex -}}" class="product__builder-color-swatch-button js-product-builder-color-swatch">
+                                            {{- color_hex -}}
+                                          </button>
+
+                                          <span class="product__builder-color-swatch-title">
+                                            {{- color_title -}}
+                                          </span>
+                                        </div>
+                                      {% endif %}
+                                    {% endfor %}
+                                  </div>
+                                </div>
+                              </div>
+                            </custom-accordion>
+                          {% endunless %}
+
+                          {% for i in (1..colors) %}
+                            {% unless is_background_not_blank %}
+                            {% assign color_index = forloop.index | plus: 1 %}
+                              {% else %}
+                            {% assign color_index = forloop.index | plus: 0 %}
+                            {% endunless %}
+
+                            <custom-accordion class="product__builder-additional js-product-builder-color-swatches-wrapper">
+                              <div class="custom-select js-accordion-toggle">
+                                <input name="properties[Color-{{- color_index -}}]" id="color-{{- color_index -}}" type="hidden" class="product__builder-color-input js-product-builder-color-input js-product-builder-input">
+
+                                <div class="custom-select__select">Select Color {{ color_index }}</div>
+
+                                {% render 'icon-color-select' %}
+                              </div>
+
+                              <div class="product__builder-color-swatches-wrapper js-accordion-content">
+                                <div class="product__builder-color-swatches-container">
+                                  <input type="text" placeholder="Enter an ARS Number and Press Enter" class="product__builder-color-swatches-input js-product-builder-color-swatches-input">
+
+                                  <div class="product__builder-color-swatches-grid js-color-swatch-grid">
+                                    {% for color_hex in color_hexes %}
+                                      {% liquid
+                                        assign current_index = forloop.index0
+                                        assign color_title = color_titles[current_index]
+                                      %}
+
+                                      {% if color_hex != blank and color_title != blank %}
+                                        <div data-title="{{- color_title -}}" class="product__builder-color-swatch js-color-swatch-grid-item">
+                                          <button type="button" style="background-color: {{ color_hex }}" data-title="{{- color_title -}}" data-value="{{- color_hex -}}" class="product__builder-color-swatch-button js-product-builder-color-swatch">
+                                            {{- color_hex -}}
+                                          </button>
+
+                                          <span class="product__builder-color-swatch-title">
+                                            {{- color_title -}}
+                                          </span>
+                                        </div>
+                                      {% endif %}
+                                    {% endfor %}
+                                  </div>
+                                </div>
+                              </div>
+                            </custom-accordion>
+                          {% endfor %}
+                        {% endcomment %}
+                      </div>
+
+                      <h3 class="product__builder-group-label space-pricing  print-hidden product__builder--has-info">
+                        Enter your own ARS pom colors <span>Please enter the code without using a space</span>
+                      </h3>
+
+                      <div class="product__builder-group  print-hidden product__builder-group--custom-colors">
+                        {% unless is_background_not_blank %}
+                          <div class="product__builder-item-wrapper">
+                            <label for="color-1" data-color-index="color-1" class=" product__builder-item pom-input">
+                              <span class="product__builder-item-numeric"> 1 </span>
+                            </label>
+
+                            {% comment %}
+                              <span class="product__builder-item-caption color-code-caption pom-input">
+                                1 Color &nbsp;
+                              </span>
+                            {% endcomment %}
+
+                            <input
+                              data-color="color-1"
+                              class="product__builder-item-caption color-code-caption pom-input pom-input--bo-border js-product-builder-color-input-hex"
+                              maxlength="4"
+                              type="text"
+                            >
+                          </div>
+                        {% endunless %}
+
+                        {% for i in (1..colors) %}
+                          {% unless is_background_not_blank %}
+                            {% assign color_index = forloop.index | plus: 1 %}
+                          {% else %}
+                            {% assign color_index = forloop.index | plus: 0 %}
+                          {% endunless %}
+
+                          <div class="product__builder-item-wrapper">
+                            <label
+                              for="color-{{- color_index -}}"
+                              data-color-index="color-{{- color_index -}}"
+                              class="product__builder-item pom-input"
+                            >
+                              <span class="product__builder-item-numeric">
+                                {{- color_index -}}
+                              </span>
+                            </label>
+
+                            {% comment %}
+                              <span class="product__builder-item-caption color-code-caption pom-input">
+                                 {{ color_index }} Color &nbsp;
+                              </span>
+                            {% endcomment %}
+
+                            <input
+                              data-color="color-{{ color_index }}"
+                              class="product__builder-item-caption color-code-caption pom-input pom-input--bo-border js-product-builder-color-input-hex own_arm_pom_color"
+                              maxlength="4"
+                              type="text"
+                            >
+                          </div>
+                        {% endfor %}
+                      </div>
+                    </div>
+                  {% endif %}
+
+                  <div class="product__builder-group-wrapper  product__builder-size">
+                    <h3 class="product__builder-group-label">
+                      Select size <span class="product__builder-group-label-additional">(Width x Length)</span>
+                    </h3>
+
+                    <div class="product__builder-group product__builder-group-w-l">
+                      <div class="product__builder-item-wrapper">
+                        <input
+                          name="properties[Width-Feet]"
+                          id="WidthFeet"
+                          type="number"
+                          value="9"
+                          class="product__builder-item-size-input js-product-builder-input js-product-builder-input-price"
+                        >
+
+                        <label for="WidthFeet" class="product__builder-item-caption">
+                          {{ 'products.product.feet' | t }}
+                        </label>
+                      </div>
+
+                      <div class="product__builder-item-wrapper">
+                        <input
+                          name="properties[Width-Inches]"
+                          id="WidthInches"
+                          type="number"
+                          value="0"
+                          class="product__builder-item-size-input js-product-builder-input js-product-builder-input-price"
+                        >
+
+                        <label for="WidthInches" class="product__builder-item-caption">
+                          {{ 'products.product.inches' | t }}
+                        </label>
+                      </div>
+
+                      <div class="product__builder-item-wrapper">
+                        <svg class="icon icon-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.61 20.61">
+                          <line fill="none" stroke="#404041" stroke-miterlimit="10" class="cls-1" x1=".35" y1=".35" x2="20.26" y2="20.26"></line>
+                          <line fill="none" stroke="#404041" stroke-miterlimit="10" class="cls-1" x1=".35" y1="20.26" x2="20.26" y2=".35"></line>
+                        </svg>
+                      </div>
+
+                      <div class="product__builder-item-wrapper">
+                        <input
+                          name="properties[Length-Feet]"
+                          id="LengthFeet"
+                          type="number"
+                          value="9"
+                          class="product__builder-item-size-input js-product-builder-input js-product-builder-input-price"
+                        >
+
+                        <label for="LengthFeet" class="product__builder-item-caption">
+                          {{ 'products.product.feet' | t }}
+                        </label>
+                      </div>
+
+                      <div class="product__builder-item-wrapper">
+                        <input
+                          name="properties[Length-Inches]"
+                          id="LengthInches"
+                          type="number"
+                          value="0"
+                          class="product__builder-item-size-input js-product-builder-input js-product-builder-input-price"
+                        >
+
+                        <label for="LengthInches" class="product__builder-item-caption">
+                          {{ 'products.product.inches' | t }}
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    {% if customerHasTagPrice != false %}
+                      <div class="{% unless show_price %} hidden{%endunless%}">
+                        <h3 class="product__builder-group-label space-pricing">
+                          {{ 'products.product.estimated_price' | t }}
+                          <span
+                            class="product__builder-group-label-additional js-product__builder-group-label-additional"
+                            data-price="{{ product.selected_or_first_available_variant.price }}"
+                          >
+                            {{- cart.currency.symbol -}}
+                            <em>
+                              {{-
+                                product.selected_or_first_available_variant.price
+                                | money
+                                | remove: cart.currency.symbol
+                              -}}
+                            </em></span
+                          >
+                        </h3>
+                        <p class="product__builder-info">{{ 'products.product.price_will_update' | t }}</p>
+                      </div>
+                    {% endif %}
+                    <div class="product__builder-input-box">
+                      {% assign productTitle = product.title | truncate: 3, '' %}
+                      {% if product.metafields.accentuate.abbreviation_in_drop_box != blank %}
+                        {% assign productTitle = product.metafields.accentuate.abbreviation_in_drop_box %}
+                      {% endif %}
+
+                      <span>
+                        {{- 'products.product.sku' | t }}: {{ productTitle -}}
+                        <em></em>
+                      </span>
+                    </div>
+                  </div>
+
+                  <button
+                    type="button"
+                    class="btn btn--full-width product__builder-submit"
+                    id="request_quote_btn"
+                  >
+                    {{ 'products.product.request_a_quote' | t }}
+                  </button>
+
+                  <div class="product__builder-row">
+                    {% render 'wishlist-button' %}
+
+                    {% render 'marker-button' %}
+
+                    {% render 'share-button' %}
+                  </div>
+
+                  <a href="#" class="btn btn--full-width product__builder-submit js-product-builder-print">
+                    {{ 'products.product.print_rendering' | t }}
+                  </a>
+
+                  <a href="#" class="btn btn--full-width product__builder-submit  js-product-builder-print-quote">
+                    {{ 'products.product.print_quote' | t }}
+                  </a>
+
+                  {% if collection != blank %}
+                    <a href="{{ collection.url }}" class="btn btn--full-width product__builder-submit">
+                      {{ 'products.product.view_all_rug_designs' | t }}
+                    </a>
+                  {% endif %}
+
+                  <input
+                    class="hidden"
+                    type="hidden"
+                    id="RequestEmail"
+                    name="contact[email]"
+                    value="{{ customer.email }}"
+                  >
+                {% endform %}
+              </product-builder>
+            </div>
+          </div>
+        {% else %}
+          {% if additional != blank or weave != blank or fiber != blank %}
+            <div class="product__meta">
+              <table class="product__table">
+                {% if fiber != blank %}
+                  <tr>
+                    <td>
+                      {{- 'products.product.fiber' | t -}}
+                      :
+                    </td>
+                    <td>{{- fiber -}}</td>
+                  </tr>
+                {% endif %}
+
+                {% if weave != blank %}
+                  <tr>
+                    <td>
+                      {{- 'products.product.weave' | t -}}
+                      :
+                    </td>
+                    <td>{{- weave -}}</td>
+                  </tr>
+                {% endif %}
+
+                {% if additional != blank %}
+                  <tr>
+                    <td>
+                      {{- 'products.product.additional' | t -}}
+                      :
+                    </td>
+                    <td>{{- additional -}}</td>
+                  </tr>
+                {% endif %}
+              </table>
+            </div>
+          {% endif %}
+
+          {% if button_text != blank and button_link != blank %}
+            <div class="product__button-wrapper">
+              <a class="btn btn--full-width js-btn-redirect" href="{{- button_link -}}">
+                {{- button_text -}}
+              </a>
+            </div>
+          {% endif %}
+        {% endif %}
+
+        {% if contact != blank %}
+          <div class="product__contact">
+            {{- contact -}}
+          </div>
+        {% endif %}
+
+        {% if product.description != blank %}
+          <div data-entrance="fade" class="product__description">
+            {{- product.description -}}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  {% if product.images.size > 1 and section.settings.is_gallery %}
+    <div class="product__gallery-slider js-product-gallery">
+      <div class="product__gallery-text">
+        {% if sub_title != blank %}
+          <h3>{{ sub_title }}</h3>
+        {% endif %}
+        {{ sub_text }}
+      </div>
+      <div class="swiper-wrapper">
+        {% for image in product.images %}
+          <div class="swiper-slide">
+            <img src="{{ image | image_url: width: 1200 }}" alt="{{ image.alt }}">
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="swiper__btns">
+        <div class="swiper-button-prev">
+          <svg
+            fill="#000000"
+            height="800px"
+            width="800px"
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 330.002 330.002"
+            xml:space="preserve"
+          >
+            <path id="XMLID_227_" d="M233.25,306.001L127.5,165.005L233.25,24.001c4.971-6.628,3.627-16.03-3-21c-6.627-4.971-16.03-3.626-21,3
+            L96.75,156.005c-4,5.333-4,12.667,0,18l112.5,149.996c2.947,3.93,7.451,6.001,12.012,6.001c3.131,0,6.29-0.978,8.988-3.001
+            C236.878,322.03,238.221,312.628,233.25,306.001z"/>
+          </svg>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next">
+          <svg
+            fill="#000000"
+            height="800px"
+            width="800px"
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 330.002 330.002"
+            xml:space="preserve"
+          >
+            <path id="XMLID_226_" d="M233.252,155.997L120.752,6.001c-4.972-6.628-14.372-7.97-21-3c-6.628,4.971-7.971,14.373-3,21
+            l105.75,140.997L96.752,306.001c-4.971,6.627-3.627,16.03,3,21c2.698,2.024,5.856,3.001,8.988,3.001
+            c4.561,0,9.065-2.072,12.012-6.001l112.5-150.004C237.252,168.664,237.252,161.33,233.252,155.997z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+{% if customer %}
+  <script>
+    function getSelectedRadioValue(name) {
+      var elements = document.querySelectorAll('input[type="radio"][name="' + name + '"]');
+      for (var i = 0; i < elements.length; i++) {
+        if (elements[i].checked) {
+          return elements[i].value;
+        }
+      }
+      return null;
+    }
+    document.getElementById('request_quote_btn').onclick = async function(){
+      let material = getSelectedRadioValue('material') || "";
+      let shape = getSelectedRadioValue('shape') || "";
+      let native_arm_pom_color = [];
+      let own_arm_pom_color = [];
+      if(document.getElementsByClassName('native_arm_pom_color').length > 0){
+        for(let i=0; i<document.getElementsByClassName('native_arm_pom_color').length; i++){
+          if(document.getElementsByClassName('native_arm_pom_color')[i].value!=""){
+            native_arm_pom_color.push(document.getElementsByClassName('native_arm_pom_color')[i].value);
+          }
+        }
+      }
+      if(document.getElementsByClassName('own_arm_pom_color').length > 0){
+        for(let i=0; i<document.getElementsByClassName('own_arm_pom_color').length; i++){
+          if(document.getElementsByClassName('own_arm_pom_color')[i].value!=""){
+            own_arm_pom_color.push(document.getElementsByClassName('own_arm_pom_color')[i].value);
+          }
+        }
+      }
+
+      let WidthFeet = document.querySelector('#WidthFeet').value || "";
+      let WidthInches = document.querySelector('#WidthInches').value || "";
+      let LengthFeet = document.querySelector('#LengthFeet').value || "";
+      let LengthInches = document.querySelector('#LengthInches').value || "";
+      let skuText = document.querySelector('.product__builder-input-box em').innerText || "";
+
+      var formData = new FormData();
+      formData.append('shopify_customer_id', '{{ customer.id }}');
+      formData.append('shopify_customer_email', '{{ customer.email }}');
+      //formData.append('shopify_customer_email', 'tish@hellotish.com');
+      formData.append('shopify_customer_name', '{{ customer.first_name }} {{ customer.last_name }}');
+      formData.append('shopify_product_id', '{{ product.id }}');
+      formData.append('shopify_product_title', '{{ product.title }}');
+      formData.append('shopify_variant_id', '{{ product.selected_or_first_available_variant.id }}');
+
+      formData.append('material', material);
+      formData.append('shape', shape);
+      formData.append('native_arm_pom_color', native_arm_pom_color.join('|'));
+      formData.append('own_arm_pom_color', own_arm_pom_color.join('|'));
+      formData.append('sku', skuText);
+      formData.append('estimated_price', document.querySelector('.js-product__builder-group-label-additional em')?.innerHTML || "");
+
+      formData.append('width_feet', WidthFeet);
+      formData.append('width_inch', WidthInches);
+      formData.append('length_feet', LengthFeet);
+      formData.append('length_inch', LengthInches);
+      let rawResponseQuotePost = await fetch('https://phplaravel-1013056-4015744.cloudwaysapps.com/api/quote/add', {
+          method: 'POST', body: formData
+      });
+      let objQuotePost = await rawResponseQuotePost.json();
+      if(objQuotePost.SUCCESS == 'TRUE'){
+        alert(objQuotePost.MESSAGE);
+        top.location.href = "/pages/my-quotes";
+      }else{
+        alert(objQuotePost.MESSAGE);
+      }
+
+    };
+  </script>
+{% else %}
+  <script>
+    top.location.href = "/account/login";
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Product template",
+  "tag": "section",
+  "settings": [
+  {
+    "type": "text",
+    "id": "button_text",
+    "label": "Button Text",
+    "default": "Design your Rug"
+  },
+  {
+    "type": "url",
+    "id": "button_link",
+    "label": "Button Link",
+    "default": "/"
+  },
+  {
+    "type": "richtext",
+    "id": "contact",
+    "label": "Contact",
+    "default": "<p>Don’t See What You Are Looking for?<br><strong>We Can Help, Please </strong><a href='#'><strong>Contact Us</strong></a></p>"
+  },
+  {
+    "type": "textarea",
+    "id": "builder_text",
+    "label": "Configurator text",
+    "default": "Use our design tool to create custom pieces that fit seamlessly into your interior design project. Combine our entire spectrum of fibers, colors and patterns to create your perfect carpet."
+  },
+  {
+    "type": "header",
+    "content": "Gallery"
+  },
+  {
+    "type": "checkbox",
+    "id": "is_gallery",
+    "default": false,
+    "label": "Show gallery"
+  },
+  {
+    "type": "text",
+    "id": "sub_title",
+    "label": "Heading",
+    "default": "Design your Rug"
+  },
+  {
+    "type": "richtext",
+    "id": "sub_text",
+    "label": "Text",
+    "default": "<p>Sing in to pick your colorls</p>"
+  }
+]
+}
+{% endschema %}

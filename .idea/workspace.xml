@@ -25,36 +25,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="list_post.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/laravel_app/resources/views/backend/samples/list_post.blade.php">
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/laravel_app/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="1156">
-              <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.36614174" vertical-offset="188" max-vertical-offset="1105">
+              <caret line="32" column="30" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/laravel_app/resources/views/backend/samples/list.blade.php">
+      <file leaf-file-name="QBController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/QBController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-68.65385" vertical-offset="0" max-vertical-offset="2295">
-              <caret line="105" column="38" selection-start-line="105" selection-start-column="37" selection-end-line="105" selection-end-column="38" />
+            <state vertical-scroll-proportion="2.2692308" vertical-offset="3935" max-vertical-offset="4709">
+              <caret line="281" column="0" selection-start-line="281" selection-start-column="0" selection-end-line="281" selection-end-column="0" />
               <folding>
-                <marker date="1715771686794" expanded="true" signature="4146:4159" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SampleController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/laravel_app/app/Http/Controllers/Admin/SampleController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.556797" vertical-offset="1231" max-vertical-offset="3553">
-              <caret line="227" column="72" selection-start-line="227" selection-start-column="72" selection-end-line="227" selection-end-column="72" />
-              <folding>
-                <element signature="e#46#86#0#PHP" expanded="true" />
-                <element signature="e#865#6449#0#PHP" expanded="false" />
+                <element signature="e#3611#4987#0#PHP" expanded="false" />
+                <element signature="e#10677#13136#0#PHP" expanded="false" />
+                <element signature="e#13138#14810#0#PHP" expanded="false" />
+                <element signature="e#14812#16298#0#PHP" expanded="false" />
+                <element signature="e#16300#17985#0#PHP" expanded="false" />
+                <marker date="1720551795094" expanded="true" signature="6013:6039" placeholder="Select * fro..CustomerType..." />
+                <marker date="1720551795094" expanded="true" signature="8511:8533" placeholder="Select * fro..Customer..." />
               </folding>
             </state>
           </provider>
@@ -65,18 +58,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/main_product_svg_form.php" />
-        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/controller.php" />
-        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/main_products.php" />
-        <option value="$PROJECT_DIR$/_notes/data.txt" />
-        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/config.ini.php" />
-        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/class.db 2.php" />
-        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/class.db.php" />
-        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/class_graphql.php" />
-        <option value="$PROJECT_DIR$/laravel_app/routes/api.php" />
-        <option value="$PROJECT_DIR$/laravel_app/app/Http/Controllers/Admin/QuoteController.php" />
-        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/webhooks_ctl.php" />
-        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/webhooks_ctl 2.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/frontend_ctl.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/frontend_ctl 2.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/class_master_orders.php" />
@@ -84,11 +65,8 @@
         <option value="$PROJECT_DIR$/asset_be/custom/quickbook/refreshToken.php" />
         <option value="$PROJECT_DIR$/laravel_app/resources/views/backend/layout/header.blade.php" />
         <option value="$PROJECT_DIR$/laravel_app/resources/views/backend/layout/basic.blade.php" />
-        <option value="$PROJECT_DIR$/laravel_app/resources/views/backend/quotes/list_post.blade.php" />
-        <option value="$PROJECT_DIR$/laravel_app/resources/views/backend/samples/list_post.blade.php" />
         <option value="$PROJECT_DIR$/laravel_app/resources/views/backend/users/edit.blade.php" />
         <option value="$PROJECT_DIR$/laravel_app/resources/views/backend/users/add.blade.php" />
-        <option value="$PROJECT_DIR$/laravel_app/resources/views/backend/layout/sidebar.blade.php" />
         <option value="$PROJECT_DIR$/../push-state.html" />
         <option value="$PROJECT_DIR$/laravel_app/app/Http/Controllers/FeHomeController.php" />
         <option value="$PROJECT_DIR$/laravel_app/app/Http/Controllers/SMTPClassController.php" />
@@ -97,25 +75,40 @@
         <option value="$PROJECT_DIR$/laravel_app/app/Http/Controllers/PHPMailer/SMTPMailController.php" />
         <option value="$PROJECT_DIR$/laravel_app/app/Http/Controllers/PHPMailer/MailController.php" />
         <option value="$PROJECT_DIR$/laravel_app/app/Http/Controllers/PHPMailer/SMTPClassController.php" />
-        <option value="$PROJECT_DIR$/laravel_app/config/constant.php" />
-        <option value="$PROJECT_DIR$/laravel_app/routes/web.php" />
         <option value="$PROJECT_DIR$/laravel_app/app/Models/QBCustomerTypes.php" />
         <option value="$PROJECT_DIR$/asset_be/custom/js/inex_datatable.js" />
         <option value="$PROJECT_DIR$/laravel_app/app/Models/User.php" />
-        <option value="$PROJECT_DIR$/laravel_app/app/Http/Controllers/QBController.php" />
         <option value="$PROJECT_DIR$/laravel_app/resources/views/backend/users/list.blade.php" />
-        <option value="$PROJECT_DIR$/laravel_app/app/Models/Quotes.php" />
-        <option value="$PROJECT_DIR$/laravel_app/app/Http/Controllers/Admin/HomeController.php" />
-        <option value="$PROJECT_DIR$/laravel_app/resources/views/backend/home.blade.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/class_Order.php" />
         <option value="$PROJECT_DIR$/laravel_app/app/Http/Controllers/Admin/UsersController.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/test.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/order_create.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/class_webhooklog.php" />
-        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/QuoteController.php" />
-        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/api.php" />
-        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/SampleController.php" />
         <option value="$PROJECT_DIR$/laravel_app/resources/views/backend/samples/list.blade.php" />
+        <option value="$PROJECT_DIR$/laravel_app/resources/views/backend/samples/list_post.blade.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/index.html" />
+        <option value="$PROJECT_DIR$/laravel_app/routes/api.php" />
+        <option value="$PROJECT_DIR$/laravel_app/app/Http/Controllers/Admin/HomeController.php" />
+        <option value="$PROJECT_DIR$/laravel_app/resources/views/backend/home.blade.php" />
+        <option value="$PROJECT_DIR$/laravel_app/routes/web.php" />
+        <option value="$PROJECT_DIR$/laravel_app/resources/views/backend/orders/list.blade.php" />
+        <option value="$PROJECT_DIR$/laravel_app/app/Http/Controllers/Admin/QuoteController.php" />
+        <option value="$PROJECT_DIR$/laravel_app/resources/views/backend/layout/sidebar.blade.php" />
+        <option value="$PROJECT_DIR$/laravel_app/app/Models/Quotes.php" />
+        <option value="$PROJECT_DIR$/laravel_app/resources/views/backend/orders/list_post.blade.php" />
+        <option value="$PROJECT_DIR$/laravel_app/resources/views/backend/quotes/list_post.blade.php" />
+        <option value="$PROJECT_DIR$/laravel_app/app/Http/Controllers/Admin/SampleController.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/SampleController.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/api.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/Quotes.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/QBCustomerTypes.php" />
+        <option value="$PROJECT_DIR$/_notes/my-quotes.liquid" />
+        <option value="$PROJECT_DIR$/_notes/main-product.liquid" />
+        <option value="$PROJECT_DIR$/laravel_app/config/constant.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/QuoteController.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/constant.php" />
+        <option value="$PROJECT_DIR$/laravel_app/app/Http/Controllers/QBController.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/QBController.php" />
       </list>
     </option>
   </component>
@@ -152,6 +145,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -199,6 +193,180 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="routes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="retorra-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="retorra-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="retorra-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="retorra-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="retorra-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="retorra-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quotes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="retorra-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="retorra-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="orders" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="retorra-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="retorra-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="retorra-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="retorra-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="retorra-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="retorra-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -320,22 +488,35 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="retorra-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="retorra-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_notes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="E:/xampp/htdocs/pro_dev/prepkitchen-dpk-api-dev" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../haulwayz-freight-broker-portal" />
     <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\xampp_8_2\htdocs\pro_dev_8\retorra-portal\laravel_app\app\Models" />
-      <recent name="E:\xampp_8_2\htdocs\pro_dev_8\retorra-portal\laravel_app\app\Http\Controllers" />
-      <recent name="E:\xampp_8_2\htdocs\pro_dev_8\retorra-portal\laravel_app\resources\views\backend\users" />
       <recent name="E:\xampp_8_2\htdocs\pro_dev_8\retorra-portal\laravel_app\resources\views\backend" />
+      <recent name="E:\xampp_8_2\htdocs\pro_dev_8\retorra-portal\laravel_app\app\Http\Controllers" />
+      <recent name="E:\xampp_8_2\htdocs\pro_dev_8\retorra-portal\laravel_app\app\Models" />
+      <recent name="E:\xampp_8_2\htdocs\pro_dev_8\retorra-portal\laravel_app\resources\views\backend\users" />
       <recent name="E:\xampp_8_2\htdocs\pro_dev_8\retorra-portal\laravel_app\app\Http\Controllers\Admin" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -389,24 +570,24 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39072847" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.301059" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36157337" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294702" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -427,88 +608,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/laravel_app/resources/views/backend/samples/list.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2295">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1715771686794" expanded="true" signature="4146:4159" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel_app/resources/views/backend/samples/list_post.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="619" max-vertical-offset="1156">
-          <caret line="54" column="21" selection-start-line="35" selection-start-column="16" selection-end-line="54" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel_app/resources/views/backend/samples/list.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2295">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1715771686794" expanded="true" signature="4146:4159" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel_app/vendor/laravel/framework/src/Illuminate/Support/Facades/DB.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.8846154" vertical-offset="399" max-vertical-offset="2193">
-          <caret line="34" column="3" selection-start-line="34" selection-start-column="3" selection-end-line="34" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel_app/resources/views/backend/settings.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="1122">
-          <caret line="14" column="71" selection-start-line="14" selection-start-column="71" selection-end-line="14" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel_app/resources/views/backend/layout/error_msg_layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="510">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://E:/xampp/htdocs/pro_dev/square-custom-apps/_square-latest-custom-app/include/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1713221" vertical-offset="0" max-vertical-offset="2567">
-          <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset_be/css/sb-admin-2.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30149812" vertical-offset="33516" max-vertical-offset="191879">
-          <caret line="1981" column="1" selection-start-line="1981" selection-start-column="1" selection-end-line="1981" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel_app/resources/views/backend/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5046555" vertical-offset="1633" max-vertical-offset="2295">
-          <caret line="112" column="49" selection-start-line="112" selection-start-column="12" selection-end-line="112" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://E:/xampp/htdocs/pro_dev/pasalay_com/laravel_app/resources/views/backend/admin/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16014898" vertical-offset="492" max-vertical-offset="2006">
-          <caret line="34" column="102" selection-start-line="34" selection-start-column="87" selection-end-line="34" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://E:/xampp/htdocs/pro_dev/pasalay_com/laravel_app/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33267716" vertical-offset="2602" max-vertical-offset="4794">
@@ -520,13 +624,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.807693" vertical-offset="221" max-vertical-offset="1530">
           <caret line="28" column="56" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel_app/resources/views/backend/quotes/list_post.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
-          <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -544,24 +641,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/laravel_app/app/Http/Controllers/Admin/_AdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.730769" vertical-offset="613" max-vertical-offset="2312">
-          <caret line="169" column="58" selection-start-line="169" selection-start-column="28" selection-end-line="169" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asset_be/custom/quickbook/vendor/quickbooks/v3-php-sdk/src/Core/OAuth/OAuth2/OAuth2LoginHelper.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3482309" vertical-offset="4556" max-vertical-offset="10166">
           <caret line="300" column="20" selection-start-line="300" selection-start-column="20" selection-end-line="300" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../push-state.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="674" max-vertical-offset="1224">
-          <caret line="59" column="55" selection-start-line="59" selection-start-column="55" selection-end-line="59" selection-end-column="55" />
         </state>
       </provider>
     </entry>
@@ -635,31 +718,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_notes/data.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3321492" vertical-offset="0" max-vertical-offset="563">
-          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel_app/config/constant.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71090907" vertical-offset="0" max-vertical-offset="731">
-          <caret line="31" column="30" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/laravel_app/app/Models/Settings.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6454545" vertical-offset="36" max-vertical-offset="612">
           <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel_app/app/Models/QBCustomerTypes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7836364" vertical-offset="130" max-vertical-offset="731">
-          <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -684,27 +746,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/laravel_app/app/Models/Quotes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="845" max-vertical-offset="1819">
-          <caret line="64" column="31" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel_app/app/Models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="905" max-vertical-offset="2295">
-          <caret line="77" column="20" selection-start-line="77" selection-start-column="20" selection-end-line="77" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel_app/resources/views/backend/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="2040">
-          <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/laravel_app/app/Http/Controllers/Admin/UsersController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="4710" max-vertical-offset="5423">
@@ -712,10 +753,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/laravel_app/app/Http/Controllers/Admin/QuoteController.php">
+    <entry file="file://$PROJECT_DIR$/laravel_app/app/Http/Controllers/Admin/_AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.556797" vertical-offset="3798" max-vertical-offset="4335">
-          <caret line="253" column="28" selection-start-line="253" selection-start-column="28" selection-end-line="253" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.47486034" vertical-offset="2686" max-vertical-offset="4097">
+          <caret line="183" column="0" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel_app/resources/views/backend/samples/list.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="2295">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel_app/resources/views/backend/samples/list_post.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="1156">
+          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -726,67 +781,247 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/laravel_app/resources/views/backend/layout/sidebar.blade.php">
+    <entry file="file://$PROJECT_DIR$/laravel_app/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6629423" vertical-offset="1378" max-vertical-offset="1938">
-          <caret line="102" column="25" selection-start-line="102" selection-start-column="25" selection-end-line="102" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1105">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/laravel_app/app/Http/Controllers/QBController.php">
+    <entry file="file://$PROJECT_DIR$/laravel_app/app/Http/Controllers/GraphqlController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49348232" vertical-offset="4767" max-vertical-offset="5304">
-          <caret line="308" column="42" selection-start-line="308" selection-start-column="42" selection-end-line="308" selection-end-column="42" />
+        <state vertical-scroll-proportion="34.26923" vertical-offset="891" max-vertical-offset="1428">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel_app/resources/views/backend/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="2040">
+          <caret line="42" column="98" selection-start-line="42" selection-start-column="98" selection-end-line="42" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel_app/resources/views/backend/orders/list.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0441458" vertical-offset="0" max-vertical-offset="1105">
+          <caret line="32" column="49" selection-start-line="32" selection-start-column="49" selection-end-line="32" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel_app/resources/views/backend/layout/sidebar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6052142" vertical-offset="610" max-vertical-offset="1938">
+          <caret line="55" column="63" selection-start-line="55" selection-start-column="63" selection-end-line="55" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel_app/resources/views/backend/quotes/list_post.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5735568" vertical-offset="253" max-vertical-offset="816">
+          <caret line="33" column="53" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel_app/resources/views/backend/orders/list_post.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="58" max-vertical-offset="714">
+          <caret line="23" column="64" selection-start-line="23" selection-start-column="64" selection-end-line="23" selection-end-column="64" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/laravel_app/app/Http/Controllers/Admin/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32363635" vertical-offset="1029" max-vertical-offset="2499">
-          <caret line="71" column="39" selection-start-line="71" selection-start-column="39" selection-end-line="71" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.4690909" vertical-offset="847" max-vertical-offset="2397">
+          <caret line="76" column="37" selection-start-line="76" selection-start-column="8" selection-end-line="76" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/laravel_app/routes/api.php">
+    <entry file="file://$PROJECT_DIR$/_notes/data.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="476">
-          <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel_app/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43110237" vertical-offset="512" max-vertical-offset="1020">
-          <caret line="53" column="53" selection-start-line="53" selection-start-column="53" selection-end-line="53" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel_app/resources/views/backend/samples/list.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-68.65385" vertical-offset="0" max-vertical-offset="2295">
-          <caret line="105" column="38" selection-start-line="105" selection-start-column="37" selection-end-line="105" selection-end-column="38" />
-          <folding>
-            <marker date="1715771686794" expanded="true" signature="4146:4159" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel_app/resources/views/backend/samples/list_post.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="1156">
-          <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.3321492" vertical-offset="0" max-vertical-offset="563">
+          <caret line="11" column="35" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/laravel_app/app/Http/Controllers/Admin/SampleController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.556797" vertical-offset="1231" max-vertical-offset="3553">
-          <caret line="227" column="72" selection-start-line="227" selection-start-column="72" selection-end-line="227" selection-end-column="72" />
+        <state vertical-scroll-proportion="-4.0" vertical-offset="4149" max-vertical-offset="5712">
+          <caret line="267" column="174" selection-start-line="267" selection-start-column="12" selection-end-line="267" selection-end-column="174" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/SampleController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.083799" vertical-offset="2652" max-vertical-offset="5712">
+          <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel_app/app/Models/Quotes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.0204842" vertical-offset="1724" max-vertical-offset="2261">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
           <folding>
-            <element signature="e#46#86#0#PHP" expanded="true" />
-            <element signature="e#865#6449#0#PHP" expanded="false" />
+            <marker date="1720550027562" expanded="true" signature="-1:-1" placeholder="SELECT count..." />
+            <marker date="1720550027562" expanded="true" signature="-1:-1" placeholder="SELECT id, q..." />
+            <marker date="1720550027562" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1720550027562" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="493">
+          <caret line="23" column="18" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel_app/app/Http/Controllers/Admin/QuoteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36212623" vertical-offset="1676" max-vertical-offset="2822">
+          <caret line="336" column="65" selection-start-line="336" selection-start-column="50" selection-end-line="336" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel_app/app/Models/QBCustomerTypes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.384615" vertical-offset="92" max-vertical-offset="714">
+          <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel_app/app/Models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3482309" vertical-offset="935" max-vertical-offset="2295">
+          <caret line="70" column="20" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
+          <folding>
+            <marker date="1715771189091" expanded="true" signature="-1:-1" placeholder="SELECT count..." />
+            <marker date="1715771189091" expanded="true" signature="-1:-1" placeholder="SELECT id, f..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_notes/my-quotes.liquid">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9396092" vertical-offset="6662" max-vertical-offset="7293">
+          <caret line="423" column="0" selection-start-line="423" selection-start-column="0" selection-end-line="423" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_notes/main-product.liquid">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9396092" vertical-offset="17015" max-vertical-offset="17646">
+          <caret line="1032" column="0" selection-start-line="1032" selection-start-column="0" selection-end-line="1032" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel_app/config/constant.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.82122904" vertical-offset="52" max-vertical-offset="816">
+          <caret line="37" column="74" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/Quotes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6201117" vertical-offset="1146" max-vertical-offset="1768">
+          <caret line="122" column="73" selection-start-line="122" selection-start-column="20" selection-end-line="122" selection-end-column="73" />
+          <folding>
+            <element signature="e#896#2285#0#PHP" expanded="false" />
+            <marker date="1720541316452" expanded="true" signature="-1:-1" placeholder="SELECT count..." />
+            <marker date="1720541316452" expanded="true" signature="-1:-1" placeholder="SELECT id, q..." />
+            <marker date="1720541316452" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1720541316452" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1720541316452" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1720541316452" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/QBCustomerTypes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7836364" vertical-offset="164" max-vertical-offset="816">
+          <caret line="36" column="52" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/constant.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.0" vertical-offset="51" max-vertical-offset="816">
+          <caret line="37" column="43" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/QuoteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46456692" vertical-offset="2280" max-vertical-offset="4709">
+          <caret line="377" column="22" selection-start-line="377" selection-start-column="22" selection-end-line="377" selection-end-column="22" />
+          <folding>
+            <element signature="e#1087#5487#0#PHP" expanded="false" />
+            <element signature="e#5493#5661#0#PHP" expanded="false" />
+            <element signature="e#5666#10073#0#PHP" expanded="false" />
+            <element signature="e#21014#27213#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel_app/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5019685" vertical-offset="0" max-vertical-offset="508">
+          <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel_app/app/Http/Controllers/QBController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.56299216" vertical-offset="2128" max-vertical-offset="6715">
+          <caret line="270" column="12" selection-start-line="270" selection-start-column="12" selection-end-line="270" selection-end-column="12" />
+          <folding>
+            <element signature="e#1459#3609#0#PHP" expanded="false" />
+            <element signature="e#1561#1860#1#PHP" expanded="false" />
+            <element signature="e#3611#4987#0#PHP" expanded="false" />
+            <marker date="1720551362208" expanded="true" signature="-1:-1" placeholder="Select * fro..CustomerType..." />
+            <marker date="1720551362208" expanded="true" signature="-1:-1" placeholder="Select * fro..Customer..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/QBController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.2692308" vertical-offset="3935" max-vertical-offset="4709">
+          <caret line="281" column="0" selection-start-line="281" selection-start-column="0" selection-end-line="281" selection-end-column="0" />
+          <folding>
+            <element signature="e#3611#4987#0#PHP" expanded="false" />
+            <element signature="e#10677#13136#0#PHP" expanded="false" />
+            <element signature="e#13138#14810#0#PHP" expanded="false" />
+            <element signature="e#14812#16298#0#PHP" expanded="false" />
+            <element signature="e#16300#17985#0#PHP" expanded="false" />
+            <marker date="1720551795094" expanded="true" signature="6013:6039" placeholder="Select * fro..CustomerType..." />
+            <marker date="1720551795094" expanded="true" signature="8511:8533" placeholder="Select * fro..Customer..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel_app/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36614174" vertical-offset="188" max-vertical-offset="1105">
+          <caret line="32" column="30" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>

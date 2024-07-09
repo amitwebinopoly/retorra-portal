@@ -262,10 +262,10 @@ class SampleController extends Controller {
             $sr_end=$record_count;
         }*/
 
-
         $curl = curl_init();
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://retorra.ezofficeinventory.com/assets/filter.api?status=checked_out&page='.$current_page,
+            //CURLOPT_URL => 'https://retorra.ezofficeinventory.com/assets/filter.api?status=checked_out&page='.$current_page,
+            CURLOPT_URL => 'https://retorra.ezofficeinventory.com/assets/filter.api?status=possessions_of_email&filter_param_val='.@$_REQUEST['email'].'&page='.$current_page,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_MAXREDIRS => 10,
             CURLOPT_TIMEOUT => 0,

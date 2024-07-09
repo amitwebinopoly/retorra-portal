@@ -1,0 +1,423 @@
+<style>
+  .quote-color {
+      height: 15px;
+      width: 15px;
+      display: inline-block;
+      margin: 2px;
+  }
+  .tab-container{
+    display: flex;
+    margin: 10px;
+  }
+  .tab-content{
+    margin: 10px;
+  }
+  .tab-item{
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #888;
+    cursor: pointer;
+  }
+  .tab-item.active{
+    background-color: #C3B793;
+    color: #000;
+  }
+  .search-section{
+    text-align: center;
+  }
+  .search-text{
+    width:50%;
+    border: 1px solid #C3B793;
+    padding: 10px;
+  }
+  .search-button{
+    padding: 9px 20px !important;
+    letter-spacing: 0.15em !important;
+  }
+  .search-button:disabled{
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  .btn-sample-detail{
+    padding: 5px 7px !important;
+    letter-spacing: 0.10em !important;
+    border-radius: 50%;
+  }
+  .table tr {
+    border-bottom: 1px solid #C3B793;
+    text-align: left;
+  }
+  .table-sub tr {
+    border-bottom: 0;
+    border-left: 1px solid #C3B793;
+    text-align: left;
+  }
+
+  .inex_modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding: 0 20px 0 20px;
+  }
+  .inex_modal_content {
+    margin: 10% auto;
+    border: 1px solid #888;
+    width: 840px;
+    max-width: 100%;
+  }
+  .inex_modal_head {
+    background-color: #fefefe;
+    padding: 15px;
+    border: 1px solid #888;
+    width: 100%; /* Could be more or less, depending on screen size */
+    font-weight: bold;
+    font-size: 16px;
+  	padding: 1em;
+  	font-size: 1.14286em;
+  }
+  .inex_modal_close{
+    float: right;
+    cursor: pointer;
+  }
+  .inex_modal_body {
+    background-color: #fefefe;
+    padding: 15px;
+    border: 1px solid #888;
+    width: 100%;
+    padding: 1em;
+  }
+</style>
+
+<div class="tab-container">
+  <div class="tab-item tab_item active" onclick="change_tab(this,'quotes')">Quotes</div>
+  <div class="tab-item tab_item" onclick="change_tab(this,'samples')">Samples</div>
+</div>
+<div id="quote_section" class="tab-content">
+  <div class="search-section">
+    <input id="quote_search_page" type="hidden" value="1">
+    <input id="quote_search_keyword" class="search-text" type="text" placeholder="Search Quote...">
+    <button id="quote_search_button" class="search-button btn" type="button">Search</button>
+  </div>
+  <div id="quote_list">
+    <div style="width:100%; text-align:center;">Processing...</div>
+  </div>
+  <div class="search-section">
+    <button id="quote_prev_button" class="search-button btn" type="button" disabled> &lt; </button>
+    <button id="quote_next_button" class="search-button btn" type="button" disabled> &gt; </button>
+  </div>
+</div>
+<div id="sample_section" class="tab-content" style="display:none;">
+  <div class="search-section">
+    <input id="sample_search_page" type="hidden" value="1">
+  </div>
+  <div id="sample_list">
+    <div style="width:100%; text-align:center;">Comming Soon</div>
+  </div>
+  <div class="search-section">
+    <button id="sample_prev_button" class="search-button btn" type="button" disabled> &lt; </button>
+    <button id="sample_next_button" class="search-button btn" type="button" disabled> &gt; </button>
+  </div>
+</div>
+
+<!-- INEX MODAL -->
+<div id="sampleDocModal" class="inex_modal">
+    <div class="inex_modal_content">
+        <div class="inex_modal_head">
+            <span class="inex_modal_title">Documents</span>
+            <span class="inex_modal_close">&#9587;</span>
+        </div>
+        <div class="inex_modal_body">
+            <div id="sampleDocModalBody"></div>
+        </div>
+    </div>
+</div>
+<!-- INEX MODAL -->
+
+{% if customer %}
+  <script>
+    var API_URL = 'https://phplaravel-1013056-4015744.cloudwaysapps.com/api';
+    let up_arrow_code = '&#11165;';
+    let down_arrow_code = '&#11167;';
+    let document_code = '&#9636;';
+    let download_code = '&#129123;';
+    let sampleDocModal = document.getElementById('sampleDocModal');
+    let sampleDocModalBody = document.getElementById('sampleDocModalBody');
+    
+    (async function(){
+      call_list_quotes();
+      call_list_samples();
+    })();
+
+    async function call_list_quotes(){
+      let customer_id = '{{ customer.id }}';
+
+      let page = document.getElementById('quote_search_page').value;
+      let keyword = document.getElementById('quote_search_keyword').value;
+
+      let rawResponseQuotes = await fetch(API_URL+'/quotes/'+customer_id+'?page='+page+'&keyword='+keyword, {
+          method: 'GET'
+      });
+      let objQuotes = await rawResponseQuotes.json();
+      
+      let html = '';
+      if(objQuotes?.DATA?.length > 0){
+        html += '<table class="table" border="0" cellpadding="10" style="margin: 20px auto; border-collapse: collapse;">';
+        html += `<thead>
+                <tr>
+                    <th>Quote No.</th>
+                    <th>Material</th>
+                    <th>Shape</th>
+                    <th>Native arm pom colors</th>
+                    <th>Own arm pom colors</th>
+                    <th>Size</th>
+                    <th>SKU</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+                </thead>`;
+        
+        html += '<tbody>';
+        Object.keys(objQuotes.DATA).forEach(key => {
+          let qt = objQuotes.DATA[key];
+
+          let size = qt.width_feet+' '+qt.width_inch+' x '+qt.length_feet+' '+qt.length_inch;
+          let native_arm_pom_color_arr = (qt.native_arm_pom_color)?.split('|') || []; 
+          
+          html += '<tr>';
+          html += '<td>'+qt.quote_number+'</td>';
+          html += '<td>'+qt.material+'</td>';
+          html += '<td>'+qt.shape+'</td>';
+          
+          html += '<td>';
+          for(let i=0; i<native_arm_pom_color_arr.length; i++){
+            html += '<div class="quote-color" style=\'background-color:'+native_arm_pom_color_arr[i]+'\'> &nbsp; </div>';
+          }
+          html += '</td>';
+          
+          html += '<td>'+qt.own_arm_pom_color+'</td>';
+          html += '<td>'+size+'</td>';
+          html += '<td>'+qt.sku+'</td>';
+          html += '<td>'+qt.status+'</td>';
+          html += '<td>';
+          if(qt.qb_estimate_id!=""){
+            html += `<a class="btn btn-sample-detail" href="${API_URL}/quotes/${customer_id}/${qt.qb_estimate_id}/download" title="Download PDF" target="_blank">${download_code}</a>`; 
+          }
+          html += '</td>';
+          
+          html += '</tr>';
+        });
+        html += '</tbody>';
+        html += '</table>';
+      }else{
+        html += '<div style="width:100%; text-align:center;">No quotes found</div>';
+      }
+
+      document.getElementById('quote_list').innerHTML = html;
+
+      if(parseInt(page)<=1){
+        document.getElementById('quote_prev_button').setAttribute("disabled", true);
+      }else{
+        document.getElementById('quote_prev_button').removeAttribute("disabled");
+      }
+
+      if(parseInt(page)==parseInt(objQuotes.page_count)){
+        document.getElementById('quote_next_button').setAttribute("disabled", true);
+      }else{
+        document.getElementById('quote_next_button').removeAttribute("disabled");
+      }
+      
+    }
+
+    document.getElementById('quote_search_button').onclick = function(){
+      document.getElementById('quote_search_page').value = 1;
+      call_list_quotes();
+    };
+    document.getElementById('quote_prev_button').onclick = function(){
+      let page = document.getElementById('quote_search_page').value;
+      document.getElementById('quote_search_page').value = parseInt(page) - 1;
+      call_list_quotes();
+    };
+    document.getElementById('quote_next_button').onclick = function(){
+      let page = document.getElementById('quote_search_page').value;
+      document.getElementById('quote_search_page').value = parseInt(page) + 1;
+      call_list_quotes();
+    };
+
+    async function call_list_samples(){
+      let customer_id = '{{ customer.id }}';
+      let customer_email = '{{ customer.email }}';
+
+      let page = document.getElementById('sample_search_page').value;
+      
+      let rawResponseSamples = await fetch(API_URL+'/samples/'+customer_id+'?page='+page+'&email='+customer_email, {
+          method: 'GET'
+      });
+      let objSamples = await rawResponseSamples.json();
+      
+      let html = '';
+      if(objSamples?.DATA?.length > 0){
+        html += '<table class="table" border="0" cellpadding="10" style="margin: 20px auto; border-collapse: collapse;">';
+        html += `<thead>
+                <tr>
+                    <th>#</th>
+                    <th>CHECKOUT DATE</th>
+                    <th>CUSTOMER</th>
+                    <th>SAMPLE NAME</th>
+                    <th>STATUS</th>
+                    <th>DETAILS</th>
+                </tr>
+                </thead>`;
+        
+        html += '<tbody>';
+        let sr = objSamples.sr_start;
+        Object.keys(objSamples.DATA).forEach(key => {
+          let qt = objSamples.DATA[key];
+          
+          html += '<tr>';
+          html += '<td>'+sr+'</td>';
+          html += '<td>'+qt.checkout_on+'</td>';
+          html += '<td>'+qt.assigned_to_user_name+'</td>';
+          html += '<td>'+qt.name+'</td>';
+          html += '<td>'+qt.state+'</td>';
+          html += `<td><a href="javascript:;" class="btn btn-sample-detail" onclick="sample_show_tr_doc_data(this,${qt.sequence_num})" title="Documents">${document_code}</a>
+            <a href="javascript:;" class="btn btn-sample-detail" onclick="sample_show_tr_data(this,${sr})" title="Details">${down_arrow_code}</a></td>`;
+          
+          html += '</tr>';
+          
+          html += `<tr style="display: none;" id="sample_tr_data_${sr}">
+                    <td colspan="6">
+                        <table border="0" class="table-sub" cellpadding="5" style="width: 100%; border-collapse: collapse;text-align:center;">
+                            <tr>
+                                <th>PRICE BY SQUARE FOOT</th>
+                                <th>MATERIALS</th>
+                                <th>WEAVE TYPE</th>
+                                <th>DAYS CHECKED OUT</th>
+                                <th>AIN NUMBER</th>
+                            </tr>
+                            <tr>
+                                <td>${qt.price}</td>
+                                <td>-</td>
+                                <td>${qt.asset_type}</td>
+                                <td>-</td>
+                                <td>${qt.identifier}</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>`;
+          
+          sr++;
+        });
+        html += '</tbody>';
+        html += '</table>';
+      }else{
+        html += '<div style="width:100%; text-align:center;">No samples found</div>';
+      }
+
+      document.getElementById('sample_list').innerHTML = html;
+
+      if(parseInt(page)<=1){
+        document.getElementById('sample_prev_button').setAttribute("disabled", true);
+      }else{
+        document.getElementById('sample_prev_button').removeAttribute("disabled");
+      }
+
+      if(parseInt(page)==parseInt(objSamples.page_count)){
+        document.getElementById('sample_next_button').setAttribute("disabled", true);
+      }else{
+        document.getElementById('sample_next_button').removeAttribute("disabled");
+      }
+      
+    }
+    document.getElementById('sample_prev_button').onclick = function(){
+      let page = document.getElementById('sample_search_page').value;
+      document.getElementById('sample_search_page').value = parseInt(page) - 1;
+      call_list_samples();
+    };
+    document.getElementById('sample_next_button').onclick = function(){
+      let page = document.getElementById('sample_search_page').value;
+      document.getElementById('sample_search_page').value = parseInt(page) + 1;
+      call_list_samples();
+    };
+
+    function sample_show_tr_data(elem,sr){
+      if(elem.classList.contains('open')){
+        elem.classList.remove('open');
+        elem.innerHTML = down_arrow_code;
+        document.getElementById('sample_tr_data_'+sr).style.display = 'none';
+      }else{
+        elem.classList.add('open');
+        elem.innerHTML = up_arrow_code;
+        document.getElementById('sample_tr_data_'+sr).style.display = 'table-row';
+      }
+    }
+    async function sample_show_tr_doc_data(elem,sequence_num){
+      sampleDocModal.style.display = "block";
+      sampleDocModalBody.innerHTML = '<div style="width:100%; text-align:center">Processing...</div>';
+      
+      let rawResponseSampleDocs = await fetch(API_URL+'/samples-docs/'+sequence_num, {
+          method: 'GET'
+      });
+      let objSampleDocs = await rawResponseSampleDocs.json();
+
+      if(objSampleDocs?.SUCCESS == 'TRUE'){
+        let html = '';
+        for(i=0; i<objSampleDocs.DATA.length; i++){
+          html += '<div style="height:150px; width:21%;">';
+          html += '<a href="'+objSampleDocs.DATA[i]+'" target="_blank"><img src="'+objSampleDocs.DATA[i]+'" style="width:100%;height:100%;"></a>';
+          html += '</div>';
+        }
+
+        sampleDocModalBody.innerHTML = html;
+      }else{
+        sampleDocModalBody.innerHTML = '<div style="width:100%; text-align:center">'+objSampleDocs.MESSAGE+'</div>';
+      }
+    }
+
+    function change_tab(e,tab){
+      for(let i=0; i<document.getElementsByClassName('tab_item').length; i++){
+        document.getElementsByClassName('tab_item')[i].classList.remove('active');
+      }
+      e.classList.add('active');
+
+      if(tab=="quotes"){
+        document.getElementById('quote_section').style.display = 'block';
+        document.getElementById('sample_section').style.display = 'none';
+      }else if(tab=="samples"){
+        document.getElementById('quote_section').style.display = 'none';
+        document.getElementById('sample_section').style.display = 'block';
+      }
+    }
+
+    
+    if(document.getElementsByClassName("inex_modal_close").length > 0){
+        document.getElementsByClassName("inex_modal_close")[0].onclick = function() {
+            sampleDocModal.style.display = "none";
+        };
+    }
+  </script>
+{% else %}
+  <script>
+    top.location.href = "/account/login";
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Section name",
+  "settings": []
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

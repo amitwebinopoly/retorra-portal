@@ -10,6 +10,8 @@ class Quotes extends Model{
 
     protected $shopify_customer_id = '';
     public function set_shopify_customer_id($val){ $this->shopify_customer_id=$val; }
+    protected $status = '';
+    public function set_status($val){ $this->status=$val; }
 
     public function insert_quote($arr){
         return DB::table($this->table)
@@ -34,8 +36,11 @@ class Quotes extends Model{
         $cond_keyword = '';
         if(isset($keyword) && !empty($keyword)){
             $cond_keyword = "AND (
+                shopify_customer_email LIKE '%$keyword%' OR
+                shopify_product_title LIKE '%$keyword%' OR
                 quote_number LIKE '%$keyword%' OR
-                status = '$keyword'
+                shopify_order_id = '$keyword' OR
+                qb_estimate_id = '$keyword'
             )";
         }
         /*$cond_start_end = "";
@@ -47,12 +52,17 @@ class Quotes extends Model{
         if(isset($this->shopify_customer_id) && !empty($this->shopify_customer_id) ){
             $cond_shopify_customer_id = "AND shopify_customer_id = '".$this->shopify_customer_id."'";
         }
+        $cond_status = "";
+        if(isset($this->status) && !empty($this->status) ){
+            $cond_status = "AND status = '".$this->status."'";
+        }
 
         $sql="SELECT count(id) as count
                 FROM `$this->table`
                 WHERE 1
                 $cond_keyword
                 $cond_shopify_customer_id
+                $cond_status
             ";
         $results = DB::select( $sql );
         return $results;
@@ -61,8 +71,11 @@ class Quotes extends Model{
         $cond_keyword = '';
         if(isset($keyword) && !empty($keyword)){
             $cond_keyword = "AND (
+                shopify_customer_email LIKE '%$keyword%' OR
+                shopify_product_title LIKE '%$keyword%' OR
                 quote_number LIKE '%$keyword%' OR
-                status = '$keyword'
+                shopify_order_id = '$keyword' OR
+                qb_estimate_id = '$keyword'
             )";
         }
         /*$cond_start_end = "";
@@ -74,6 +87,10 @@ class Quotes extends Model{
         if(isset($this->shopify_customer_id) && !empty($this->shopify_customer_id) ){
             $cond_shopify_customer_id = "AND shopify_customer_id = '".$this->shopify_customer_id."'";
         }
+        $cond_status = "";
+        if(isset($this->status) && !empty($this->status) ){
+            $cond_status = "AND status = '".$this->status."'";
+        }
 
         $cond_order = 'ORDER BY id DESC';
         if(!empty($sort_field)){
@@ -81,12 +98,16 @@ class Quotes extends Model{
         }
 
         $sql="
-                SELECT id, quote_number, shape, ars_pom_color_1, ars_pom_color_2, ars_pom_color_3,
-                width_feet, width_inch, length_feet, length_inch, status, add_date
+                SELECT id, quote_number, qb_estimate_id, shopify_customer_email, shopify_customer_name,
+                shape, material, native_arm_pom_color, own_arm_pom_color, sku,
+                width_feet, width_inch, length_feet, length_inch,
+                shopify_order_id, qb_status, status, add_date
                 FROM `$this->table`
                 WHERE 1
                 $cond_keyword
                 $cond_shopify_customer_id
+                $cond_status
+
                 $cond_order
                 LIMIT $start,$end
             ";
@@ -96,7 +117,17 @@ class Quotes extends Model{
 
     public function select_data_by_id($id){
         $sql="SELECT * FROM `$this->table` WHERE id = '$id' ";
-        $results = DB::select( DB::raw($sql) );
+        $results = DB::select( $sql );
+        return $results;
+    }
+    public function select_data_by_shopify_customer_id_and_qb_estimate_id($shopify_customer_id,$qb_estimate_id){
+        $sql="SELECT * FROM `$this->table` WHERE shopify_customer_id = '$shopify_customer_id' AND qb_estimate_id = '$qb_estimate_id' ";
+        $results = DB::select( $sql );
+        return $results;
+    }
+    public function select_data_for_status_cron(){
+        $sql="SELECT * FROM `$this->table` WHERE qb_estimate_id != '' AND qb_status NOT IN ('Declined','Closed','Paid')";
+        $results = DB::select( $sql );
         return $results;
     }
 }

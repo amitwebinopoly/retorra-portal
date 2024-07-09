@@ -20,7 +20,7 @@
                 ?>
                 <tr>
                     <td><?php echo $sr; ?></td>
-                    <td><?php echo $single['checkout_on'];?></td>
+                    <td><?php echo $single['che1c1k1ou1t_on'];?></td>
                     <td><?php echo $single['assigned_to_user_name'];?></td>
                     <td><?php echo $single['name'];?></td>
                     <td><?php echo $single['state'];?></td>

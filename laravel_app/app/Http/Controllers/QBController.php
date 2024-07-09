@@ -286,6 +286,7 @@ class QBController extends Controller {
 							'last_name' => isset($cus['FamilyName'])?$cus['FamilyName']:"",
 							'email' => $email,
 							'role' => $role,
+							'customer_ref' => isset($cus['Id'])?$cus['Id']:"",
 							'customer_type_ref' => $customer_type_ref
 						];
 
@@ -316,4 +317,202 @@ class QBController extends Controller {
 			return json_encode($res,1);
 		}
 	}
+	public function create_update_estimate($create_est_data){
+		$Settings = new Settings();
+
+		/*$create_est_data = [
+			"Line" => [
+				[
+					"Description" => "sku: BG 06 DG 03 DG03 DT08\nshape: square\nmaterial: wool-or-sunpat",
+					"Amount" => 0,
+					"DetailType" => "SalesItemLineDetail",
+					"SalesItemLineDetail" => [
+						"UnitPrice" => 0,
+						"Qty" => 1,
+						"ItemRef" => [
+							"value" => "4"	//this is hardcoded productId of "Retorra custom rug" - https://app.qbo.intuit.com/app/item?itemId=4
+						]
+					]
+				]
+			],
+			"CustomerRef" => [
+				"value" => "3"
+			]
+		];*/
+
+		$qb_access_token_exist = $Settings->select_field_by_key('QB_ACCESS_TOKEN');
+		$qb_real_id_exist = $Settings->select_field_by_key('QB_REALM_ID');
+		if(isset($qb_access_token_exist[0]->value) && !empty($qb_access_token_exist[0]->value) && isset($qb_real_id_exist[0]->value) && !empty($qb_real_id_exist[0]->value) ){
+			$qb_access_token = $qb_access_token_exist[0]->value;
+			$qb_real_id = $qb_real_id_exist[0]->value;
+			if(Config::get('constant.QB_BASE_ENV') == 'production'){
+				$api_base_url = 'quickbooks.api.intuit.com';
+			}else{
+				$api_base_url = 'sandbox-quickbooks.api.intuit.com';
+			}
+
+			$curl = curl_init();
+
+			curl_setopt_array($curl, array(
+				CURLOPT_URL => 'https://'.$api_base_url.'/v3/company/'.$qb_real_id.'/estimate?minorversion=69',
+				CURLOPT_RETURNTRANSFER => true,
+				CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+				CURLOPT_CUSTOMREQUEST => 'POST',
+				CURLOPT_POSTFIELDS => json_encode($create_est_data,1),
+				CURLOPT_HTTPHEADER => array(
+					'Accept: application/json',
+					'Content-Type: application/json',
+					'Authorization: Bearer '.$qb_access_token
+				),
+			));
+
+			$response = curl_exec($curl);
+			curl_close($curl);
+			$response_arr = json_decode($response,1);
+			if(isset($response_arr['Estimate']['Id']) && !empty($response_arr['Estimate']['Id']) ){
+				$res['SUCCESS'] = 'TRUE';
+				$res['MESSAGE'] = '';
+				$res['DATA'] = $response_arr;
+			}else if(isset($response_arr['fault']['error'][0]['message']) && !empty($response_arr['fault']['error'][0]['message']) ){
+				$res['SUCCESS'] = 'FALSE';
+				$res['MESSAGE'] = $response_arr['fault']['error'][0]['message'];
+			}else {
+				$res['SUCCESS'] = 'FALSE';
+				$res['MESSAGE'] = 'Something is wrong in estimate api.';
+			}
+		}else{
+			$res['SUCCESS'] = 'FALSE';
+			$res['MESSAGE'] = 'QB_ACCESS_TOKEN or QB_REALM_ID is not found.';
+		}
+		return json_encode($res,1);
+	}
+	public function get_estimate($estimate_id){
+		$Settings = new Settings();
+
+		$qb_access_token_exist = $Settings->select_field_by_key('QB_ACCESS_TOKEN');
+		$qb_real_id_exist = $Settings->select_field_by_key('QB_REALM_ID');
+		if(isset($qb_access_token_exist[0]->value) && !empty($qb_access_token_exist[0]->value) && isset($qb_real_id_exist[0]->value) && !empty($qb_real_id_exist[0]->value) ){
+			$qb_access_token = $qb_access_token_exist[0]->value;
+			$qb_real_id = $qb_real_id_exist[0]->value;
+			if(Config::get('constant.QB_BASE_ENV') == 'production'){
+				$api_base_url = 'quickbooks.api.intuit.com';
+			}else{
+				$api_base_url = 'sandbox-quickbooks.api.intuit.com';
+			}
+
+			$curl = curl_init();
+			curl_setopt_array($curl, array(
+				CURLOPT_URL => 'https://'.$api_base_url.'/v3/company/'.$qb_real_id.'/estimate/'.$estimate_id.'?minorversion=69',
+				CURLOPT_RETURNTRANSFER => true,
+				CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+				CURLOPT_CUSTOMREQUEST => 'GET',
+				CURLOPT_HTTPHEADER => array(
+					'Accept: application/json',
+					'Content-Type: application/text',
+					'Authorization: Bearer '.$qb_access_token
+				),
+			));
+
+			$response = curl_exec($curl);
+			$response_arr = json_decode($response,1);
+			curl_close($curl);
+			if(isset($response_arr['Estimate']['Id']) && !empty($response_arr['Estimate']['Id'])){
+				$res['SUCCESS'] = 'TRUE';
+				$res['MESSAGE'] = '';
+				$res['DATA'] = $response_arr;
+			}else{
+				echo '';
+				$res['SUCCESS'] = 'FALSE';
+				$res['MESSAGE'] = 'Estimate is not found.';
+			}
+		}else{
+			$res['SUCCESS'] = 'FALSE';
+			$res['MESSAGE'] = 'QB_ACCESS_TOKEN or QB_REALM_ID is not found.';
+		}
+		return json_encode($res,1);
+	}
+	public function download_estimate($estimate_id){
+		$Settings = new Settings();
+
+		$qb_access_token_exist = $Settings->select_field_by_key('QB_ACCESS_TOKEN');
+		$qb_real_id_exist = $Settings->select_field_by_key('QB_REALM_ID');
+		if(isset($qb_access_token_exist[0]->value) && !empty($qb_access_token_exist[0]->value) && isset($qb_real_id_exist[0]->value) && !empty($qb_real_id_exist[0]->value) ){
+			$qb_access_token = $qb_access_token_exist[0]->value;
+			$qb_real_id = $qb_real_id_exist[0]->value;
+			if(Config::get('constant.QB_BASE_ENV') == 'production'){
+				$api_base_url = 'quickbooks.api.intuit.com';
+			}else{
+				$api_base_url = 'sandbox-quickbooks.api.intuit.com';
+			}
+
+			$curl = curl_init();
+			curl_setopt_array($curl, array(
+				CURLOPT_URL => 'https://'.$api_base_url.'/v3/company/'.$qb_real_id.'/estimate/'.$estimate_id.'/pdf?minorversion=69',
+				CURLOPT_RETURNTRANSFER => true,
+				CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+				CURLOPT_CUSTOMREQUEST => 'GET',
+				CURLOPT_HTTPHEADER => array(
+					'Content-Type: application/pdf',
+					'Authorization: Bearer '.$qb_access_token
+				),
+			));
+
+			$response = curl_exec($curl);
+			curl_close($curl);
+
+			header("Content-type:application/pdf");
+			header("Content-Disposition:attachment;filename=\"estimate-".$estimate_id.'-'.time().".pdf\"");
+			echo $response;
+			exit;
+		}else{
+			$res['SUCCESS'] = 'FALSE';
+			$res['MESSAGE'] = 'QB_ACCESS_TOKEN or QB_REALM_ID is not found.';
+		}
+		return json_encode($res,1);
+	}
+	public function send_estimate($estimate_id,$send_to){
+		$Settings = new Settings();
+
+		$qb_access_token_exist = $Settings->select_field_by_key('QB_ACCESS_TOKEN');
+		$qb_real_id_exist = $Settings->select_field_by_key('QB_REALM_ID');
+		if(isset($qb_access_token_exist[0]->value) && !empty($qb_access_token_exist[0]->value) && isset($qb_real_id_exist[0]->value) && !empty($qb_real_id_exist[0]->value) ){
+			$qb_access_token = $qb_access_token_exist[0]->value;
+			$qb_real_id = $qb_real_id_exist[0]->value;
+			if(Config::get('constant.QB_BASE_ENV') == 'production'){
+				$api_base_url = 'quickbooks.api.intuit.com';
+			}else{
+				$api_base_url = 'sandbox-quickbooks.api.intuit.com';
+			}
+
+			$curl = curl_init();
+			curl_setopt_array($curl, array(
+				CURLOPT_URL => 'https://'.$api_base_url.'/v3/company/'.$qb_real_id.'/estimate/'.$estimate_id.'/send?sendTo='.$send_to.'&minorversion=69',
+				CURLOPT_RETURNTRANSFER => true,
+				CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+				CURLOPT_CUSTOMREQUEST => 'POST',
+				CURLOPT_HTTPHEADER => array(
+					'Accept: application/json',
+					'Authorization: Bearer '.$qb_access_token
+				),
+			));
+
+			$response = curl_exec($curl);
+			curl_close($curl);
+			$response_arr = json_decode($response,1);
+			if(isset($response_arr['Estimate']['Id']) && !empty($response_arr['Estimate']['Id'])){
+				$res['SUCCESS'] = 'TRUE';
+				$res['MESSAGE'] = '';
+				$res['DATA'] = $response_arr;
+			}else{
+				echo '';
+				$res['SUCCESS'] = 'FALSE';
+				$res['MESSAGE'] = 'Something went wrong in sending email.';
+			}
+		}else{
+			$res['SUCCESS'] = 'FALSE';
+			$res['MESSAGE'] = 'QB_ACCESS_TOKEN or QB_REALM_ID is not found.';
+		}
+		return json_encode($res,1);
+	}
+
 }

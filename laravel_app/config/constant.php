@@ -32,6 +32,11 @@ return array(
     'QB_BASE_ENV'=>'production',   //development, production
     'QB_SCOPE'=>'com.intuit.quickbooks.accounting openid profile email phone address',
 
+    'SHOPIFY_STORE'=> 'retorra-rugs.myshopify.com',
+    'SHOPIFY_API_TOKEN'=> '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', //private app - ScriptAndTheory Development
+
+    'CLIENT_ADMIN_EMAIL'=>'ryan@retorra.com',
+
     'DATE_FORMATE'=>'d-M-Y',
     /*'MONTH_FORMATE'=>'M-Y',
     'DATEPICKER_DATE_FORMATE'=>'dd-M-yyyy',

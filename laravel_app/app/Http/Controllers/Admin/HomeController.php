@@ -74,8 +74,13 @@ class HomeController extends Controller {
 		$count_all = $User->count_all('Showroom');
 		$this->param['count_showroom'] = $count_all[0]->count;
 
+		$Quotes->set_status('Draft');
 		$count_all = $Quotes->count_all('');
 		$this->param['count_quote'] = $count_all[0]->count;
+
+		$Quotes->set_status('Order-Placed');
+		$count_all = $Quotes->count_all('');
+		$this->param['count_order'] = $count_all[0]->count;
 
 		$this->param['date_formate'] = Config::get('constant.DATE_FORMATE');
 		return view('backend.home',$this->param);

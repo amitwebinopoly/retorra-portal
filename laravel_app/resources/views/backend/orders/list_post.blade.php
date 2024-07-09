@@ -6,12 +6,9 @@
                 <tr>
                     <th>#</th>
                     <th>Quote No.</th>
-                    <th>Material</th>
-                    <th>Shape</th>
-                    <th>Native arm pom colors</th>
-                    <th>Own arm pom colors</th>
-                    <th>Size</th>
-                    <th>SKU</th>
+                    <th>QB Estimate ID</th>
+                    <th>Email</th>
+                    <th>Shopify Order ID</th>
                     <th>Status</th>
                 </tr>
                 </thead>
@@ -25,13 +22,10 @@
                 <tr>
                     <td><?php echo $sr; ?></td>
                     <td><?php echo $single->quote_number;?></td>
-                    <td><?php echo $single->material;?></td>
-                    <td><?php echo $single->shape;?></td>
-                    <td><?php echo $single->native_arm_pom_color;?></td>
-                    <td><?php echo $single->own_arm_pom_color;?></td>
-                    <td><?php echo $size;?></td>
-                    <td><?php echo $single->sku;?></td>
-                    <td><?php echo $single->qb_status;?></td>
+                    <td><?php echo $single->qb_estimate_id;?></td>
+                    <td><?php echo $single->shopify_customer_email;?></td>
+                    <td><?php echo $single->shopify_order_id;?></td>
+                    <td><?php echo $single->status;?></td>
                 </tr>
                 <?php
                 $sr++;

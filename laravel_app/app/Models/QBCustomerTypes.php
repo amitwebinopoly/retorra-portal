@@ -34,4 +34,10 @@ class QBCustomerTypes extends Model{
             ->where('name',$name)
             ->get()->toArray();
     }
+    public function select_field_by_customer_type_id($qb_customer_type_id,$fields='*'){
+        return DB::table($this->table)
+            ->select($fields)
+            ->where('qb_customer_type_id',$qb_customer_type_id)
+            ->get()->toArray();
+    }
 }

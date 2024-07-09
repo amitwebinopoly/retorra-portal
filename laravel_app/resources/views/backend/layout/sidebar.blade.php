@@ -53,8 +53,8 @@
         </a>
     </li>
 
-    <li class="nav-item sb_check_active" data-route="">
-        <a class="nav-link" href="#">
+    <li class="nav-item sb_check_active" data-route="list_order">
+        <a class="nav-link" href="{{route('list_order')}}">
             <i class="fas fa-fw fa-list"></i>
             <span>Orders</span>
         </a>
