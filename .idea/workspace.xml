@@ -38,8 +38,8 @@
       <file leaf-file-name="constant.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/laravel_app/config/constant.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44134077" vertical-offset="52" max-vertical-offset="782">
-              <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.72625697" vertical-offset="52" max-vertical-offset="748">
+              <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -1011,8 +1011,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/laravel_app/config/constant.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44134077" vertical-offset="52" max-vertical-offset="782">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.72625697" vertical-offset="52" max-vertical-offset="748">
+          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
           <folding />
         </state>
       </provider>
