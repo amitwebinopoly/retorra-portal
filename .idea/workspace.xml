@@ -25,30 +25,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/laravel_app/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36614174" vertical-offset="188" max-vertical-offset="1105">
+            <state vertical-scroll-proportion="-3.3818183" vertical-offset="188" max-vertical-offset="1105">
               <caret line="32" column="30" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QBController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/QBController.php">
+      <file leaf-file-name="constant.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/laravel_app/config/constant.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.2692308" vertical-offset="3935" max-vertical-offset="4709">
-              <caret line="281" column="0" selection-start-line="281" selection-start-column="0" selection-end-line="281" selection-end-column="0" />
-              <folding>
-                <element signature="e#3611#4987#0#PHP" expanded="false" />
-                <element signature="e#10677#13136#0#PHP" expanded="false" />
-                <element signature="e#13138#14810#0#PHP" expanded="false" />
-                <element signature="e#14812#16298#0#PHP" expanded="false" />
-                <element signature="e#16300#17985#0#PHP" expanded="false" />
-                <marker date="1720551795094" expanded="true" signature="6013:6039" placeholder="Select * fro..CustomerType..." />
-                <marker date="1720551795094" expanded="true" signature="8511:8533" placeholder="Select * fro..Customer..." />
-              </folding>
+            <state vertical-scroll-proportion="0.44134077" vertical-offset="52" max-vertical-offset="782">
+              <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -104,11 +96,11 @@
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/QBCustomerTypes.php" />
         <option value="$PROJECT_DIR$/_notes/my-quotes.liquid" />
         <option value="$PROJECT_DIR$/_notes/main-product.liquid" />
-        <option value="$PROJECT_DIR$/laravel_app/config/constant.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/QuoteController.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/constant.php" />
         <option value="$PROJECT_DIR$/laravel_app/app/Http/Controllers/QBController.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/QBController.php" />
+        <option value="$PROJECT_DIR$/laravel_app/config/constant.php" />
       </list>
     </option>
   </component>
@@ -926,14 +918,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/laravel_app/config/constant.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82122904" vertical-offset="52" max-vertical-offset="816">
-          <caret line="37" column="74" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/Quotes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6201117" vertical-offset="1146" max-vertical-offset="1768">
@@ -1011,16 +995,24 @@
             <element signature="e#13138#14810#0#PHP" expanded="false" />
             <element signature="e#14812#16298#0#PHP" expanded="false" />
             <element signature="e#16300#17985#0#PHP" expanded="false" />
-            <marker date="1720551795094" expanded="true" signature="6013:6039" placeholder="Select * fro..CustomerType..." />
-            <marker date="1720551795094" expanded="true" signature="8511:8533" placeholder="Select * fro..Customer..." />
+            <marker date="1720551795094" expanded="true" signature="-1:-1" placeholder="Select * fro..CustomerType..." />
+            <marker date="1720551795094" expanded="true" signature="-1:-1" placeholder="Select * fro..Customer..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/laravel_app/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36614174" vertical-offset="188" max-vertical-offset="1105">
+        <state vertical-scroll-proportion="-3.3818183" vertical-offset="188" max-vertical-offset="1105">
           <caret line="32" column="30" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel_app/config/constant.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44134077" vertical-offset="52" max-vertical-offset="782">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
           <folding />
         </state>
       </provider>

@@ -23,12 +23,10 @@ return array(
     'EZ_OFFICE_INV_TOKEN'=>'7fbe1ebb60bc0c28f6e627a323a174e3',
 
     /*'QB_CLIENT_ID'=>'ABh84ojNdw3FNHu5VEv1JZoIq14WdIF8QvARwYrQSlTuFbkANl',
-    'QB_CLIENT_SECRET'=>'XuPdzhqKN7b5H1eqzgbvcQ1we1gCa4hpcfQJobuv',
     'QB_BASE_ENV'=>'development',   //development, production
     'QB_SCOPE'=>'com.intuit.quickbooks.accounting openid profile email phone address',*/
 
     'QB_CLIENT_ID'=>'ABk65UcACX1QTWkznJo1FeY8FvEHXiAwj1l2k4iQs9YZq4426K',
-    'QB_CLIENT_SECRET'=>'F3BKdwtRzCUBN0obij99imuISjhS4Oapv1ozAaFt',
     'QB_BASE_ENV'=>'production',   //development, production
     'QB_SCOPE'=>'com.intuit.quickbooks.accounting openid profile email phone address',
 
