@@ -98,7 +98,7 @@ class Quotes extends Model{
         }
 
         $sql="
-                SELECT id, quote_number, qb_estimate_id, shopify_customer_email, shopify_customer_name,
+                SELECT id, quote_number, project_name, qb_estimate_id, shopify_customer_email, shopify_customer_name,
                 shape, material, native_arm_pom_color, own_arm_pom_color, sku,
                 width_feet, width_inch, length_feet, length_inch,
                 shopify_order_id, qb_status, status, add_date

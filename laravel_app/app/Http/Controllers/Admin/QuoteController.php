@@ -295,6 +295,7 @@ class QuoteController extends Controller {
             $insert_arr = [
                 'qb_customer_ref_id' => $user_data[0]->customer_ref,
                 'quote_number' => $quote_number,
+                'project_name' => @$postData['project_name'],
                 'shape' => $postData['shape'],
                 'material' => $postData['material'],
                 'native_arm_pom_color' => $postData['native_arm_pom_color'],
@@ -349,7 +350,13 @@ class QuoteController extends Controller {
                 $CustomField_with_value = [];
                 if(isset($create_estimate_res_arr['DATA']['Estimate']['CustomField'])){
                     foreach($create_estimate_res_arr['DATA']['Estimate']['CustomField'] as $cf){
-                        if($cf['Name'] == 'Customer Type'){
+                        if($cf['Name'] == 'Project Sidemark' && isset($postData['project_name']) && !empty($postData['project_name']) ){
+                            $CustomField_with_value[] = [
+                                "DefinitionId" => $cf['DefinitionId'],
+                                "StringValue" => $postData['project_name'],
+                                "Type" => "StringType"
+                            ];
+                        }else if($cf['Name'] == 'Customer Type'){
                             $CustomField_with_value[] = [
                                 "DefinitionId" => $cf['DefinitionId'],
                                 "StringValue" => $user_data[0]->role,

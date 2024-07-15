@@ -515,4 +515,114 @@ class QBController extends Controller {
 		return json_encode($res,1);
 	}
 
+	public function get_customer_by_email($email){
+		$Settings = new Settings();
+
+		$qb_access_token_exist = $Settings->select_field_by_key('QB_ACCESS_TOKEN');
+		$qb_real_id_exist = $Settings->select_field_by_key('QB_REALM_ID');
+		if(isset($qb_access_token_exist[0]->value) && !empty($qb_access_token_exist[0]->value) && isset($qb_real_id_exist[0]->value) && !empty($qb_real_id_exist[0]->value) ){
+			$qb_access_token = $qb_access_token_exist[0]->value;
+			$qb_real_id = $qb_real_id_exist[0]->value;
+			if(Config::get('constant.QB_BASE_ENV') == 'production'){
+				$api_base_url = 'quickbooks.api.intuit.com';
+			}else{
+				$api_base_url = 'sandbox-quickbooks.api.intuit.com';
+			}
+
+			$query = "select * from Customer where PrimaryEmailAddr = '".$email."'";
+			$curl = curl_init();
+			curl_setopt_array($curl, array(
+				CURLOPT_URL => 'https://'.$api_base_url.'/v3/company/'.$qb_real_id.'/query?minorversion=69&query='.urlencode($query),
+				CURLOPT_RETURNTRANSFER => true,
+				CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+				CURLOPT_CUSTOMREQUEST => 'GET',
+				CURLOPT_HTTPHEADER => array(
+					'Accept: application/json',
+					'Content-Type: application/text',
+					'Authorization: Bearer '.$qb_access_token
+				),
+			));
+
+			$response = curl_exec($curl);
+			$response_arr = json_decode($response,1);
+			curl_close($curl);
+			if(isset($response_arr['QueryResponse']['Customer'][0]['Id']) && !empty($response_arr['QueryResponse']['Customer'][0]['Id'])){
+				$res['SUCCESS'] = 'TRUE';
+				$res['MESSAGE'] = '';
+				$res['DATA'] = $response_arr['QueryResponse']['Customer'][0];
+			}else{
+				echo '';
+				$res['SUCCESS'] = 'FALSE';
+				$res['MESSAGE'] = 'Customer is not found.';
+			}
+		}else{
+			$res['SUCCESS'] = 'FALSE';
+			$res['MESSAGE'] = 'QB_ACCESS_TOKEN or QB_REALM_ID is not found.';
+		}
+		return json_encode($res,1);
+	}
+	public function create_customer($create_cust_data){
+		$Settings = new Settings();
+
+		/*$create_cust_data = [
+			"FullyQualifiedName" => "Amit Gmail",
+			"PrimaryEmailAddr" => [
+				"Address" => "amit.webinopoly@gmail.com"
+			],
+			"DisplayName" => "Amit Gmail",
+			"Suffix" => "",
+			"Title" => "",
+			"MiddleName" => "",
+			"Notes" => "shopify_customer_id:321654321654",
+			"FamilyName" => "Amit",
+			"GivenName" => "Gmail"
+		];*/
+
+		$qb_access_token_exist = $Settings->select_field_by_key('QB_ACCESS_TOKEN');
+		$qb_real_id_exist = $Settings->select_field_by_key('QB_REALM_ID');
+		if(isset($qb_access_token_exist[0]->value) && !empty($qb_access_token_exist[0]->value) && isset($qb_real_id_exist[0]->value) && !empty($qb_real_id_exist[0]->value) ){
+			$qb_access_token = $qb_access_token_exist[0]->value;
+			$qb_real_id = $qb_real_id_exist[0]->value;
+			if(Config::get('constant.QB_BASE_ENV') == 'production'){
+				$api_base_url = 'quickbooks.api.intuit.com';
+			}else{
+				$api_base_url = 'sandbox-quickbooks.api.intuit.com';
+			}
+
+			$curl = curl_init();
+
+			curl_setopt_array($curl, array(
+				CURLOPT_URL => 'https://'.$api_base_url.'/v3/company/'.$qb_real_id.'/customer?minorversion=69',
+				CURLOPT_RETURNTRANSFER => true,
+				CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+				CURLOPT_CUSTOMREQUEST => 'POST',
+				CURLOPT_POSTFIELDS => json_encode($create_cust_data,1),
+				CURLOPT_HTTPHEADER => array(
+					'Accept: application/json',
+					'Content-Type: application/json',
+					'Authorization: Bearer '.$qb_access_token
+				),
+			));
+
+			$response = curl_exec($curl);
+			curl_close($curl);
+			$response_arr = json_decode($response,1);
+			if(isset($response_arr['Customer']['Id']) && !empty($response_arr['Customer']['Id']) ){
+				$res['SUCCESS'] = 'TRUE';
+				$res['MESSAGE'] = '';
+				$res['DATA'] = $response_arr;
+			}else if(isset($response_arr['fault']['error'][0]['message']) && !empty($response_arr['fault']['error'][0]['message']) ){
+				$res['SUCCESS'] = 'FALSE';
+				$res['MESSAGE'] = $response_arr['fault']['error'][0]['message'];
+			}else {
+				$res['SUCCESS'] = 'FALSE';
+				$res['MESSAGE'] = 'Something is wrong in estimate api.';
+			}
+		}else{
+			$res['SUCCESS'] = 'FALSE';
+			$res['MESSAGE'] = 'QB_ACCESS_TOKEN or QB_REALM_ID is not found.';
+		}
+		return json_encode($res,1);
+	}
+
 }

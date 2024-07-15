@@ -2,6 +2,14 @@
 
 @section('content')
     <link href="{{asset('asset_be/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
+    <style>
+        .quote-color {
+            height: 15px;
+            width: 15px;
+            display: inline-block;
+            margin: 2px;
+        }
+    </style>
 
     <div class="container-fluid">
 

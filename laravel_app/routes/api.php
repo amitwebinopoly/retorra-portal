@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\QuoteController;
 use App\Http\Controllers\Admin\SampleController;
+use App\Http\Controllers\FeHomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,5 @@ Route::get('quotes/{customer_id}/{qb_estimate_id}/download',[ QuoteController::c
 Route::post('quote/add',[ QuoteController::class,'api_add_quote'])->name('api_add_quote');
 Route::get('samples/{customer_id}',[ SampleController::class,'api_get_sample_list'])->name('api_get_sample_list');
 Route::get('samples-docs/{sequence_num}',[ SampleController::class,'api_get_sample_doc_list'])->name('api_get_sample_doc_list');
+
+Route::post('shopify_webhook',[ FeHomeController::class,'shopify_webhook']);
