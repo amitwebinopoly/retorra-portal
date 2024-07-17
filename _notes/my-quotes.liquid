@@ -173,12 +173,13 @@
         html += `<thead>
                 <tr>
                     <th>Quote No.</th>
+                    <th>Pattern</th>
                     <th>Material</th>
                     <th>Shape</th>
-                    <th>Native arm pom colors</th>
-                    <th>Own arm pom colors</th>
+                    <th>Native ars pom colors</th>
+                    <th>Own ars pom colors</th>
                     <th>Size</th>
-                    <th>SKU</th>
+                    <th>Project Name</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
@@ -193,6 +194,7 @@
           
           html += '<tr>';
           html += '<td>'+qt.quote_number+'</td>';
+          html += '<td>'+qt.shopify_product_title+'</td>';
           html += '<td>'+qt.material+'</td>';
           html += '<td>'+qt.shape+'</td>';
           
@@ -204,7 +206,7 @@
           
           html += '<td>'+qt.own_arm_pom_color+'</td>';
           html += '<td>'+size+'</td>';
-          html += '<td>'+qt.sku+'</td>';
+          html += '<td>'+qt.project_name+'</td>';
           html += '<td>'+qt.status+'</td>';
           html += '<td>';
           if(qt.qb_estimate_id!=""){

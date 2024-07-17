@@ -321,7 +321,7 @@ class QuoteController extends Controller {
             $create_est_data = [
                 "Line" => [
                     [
-                        "Description" => "Quote number: ".$quote_number."\nsku: ".$postData['sku']."\nshape: ".$postData['shape']."\nmaterial: ".$postData['material'],
+                        "Description" => "Quote number: ".$quote_number."\nPattern: ".$postData['shopify_product_title']."\nsku: ".$postData['sku']."\nshape: ".$postData['shape']."\nmaterial: ".$postData['material'],
                         "Amount" => floatval($postData['estimated_price']),
                         "DetailType" => "SalesItemLineDetail",
                         "SalesItemLineDetail" => [
@@ -335,7 +335,8 @@ class QuoteController extends Controller {
                 ],
                 "CustomerRef" => [
                     "value" => $user_data[0]->customer_ref
-                ]
+                ],
+                "DocNumber" => $quote_number
             ];
             $create_estimate_res = $QBController->create_update_estimate($create_est_data);
             $create_estimate_res_arr = json_decode($create_estimate_res,1);
@@ -392,6 +393,7 @@ class QuoteController extends Controller {
                 $res['SUCCESS'] = 'TRUE';
                 $res['MESSAGE'] = "Your quote has been submitted successfully. We will contact you soon.";
                 $res['insert_id'] = $insert_id;
+                $res['qb_estimate_id'] = $create_estimate_res_arr['DATA']['Estimate']['Id'];
             }else{
                 $res['SUCCESS'] = 'FALSE';
                 $res['MESSAGE'] = $create_estimate_res_arr['MESSAGE'];

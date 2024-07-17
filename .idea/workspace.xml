@@ -25,44 +25,101 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="list_post.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/list_post.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-16.076923" vertical-offset="364" max-vertical-offset="1088">
+              <caret line="46" column="119" selection-start-line="46" selection-start-column="119" selection-end-line="46" selection-end-column="119" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/api.php">
+        <entry file="file://$PROJECT_DIR$/laravel_app/routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.961538" vertical-offset="0" max-vertical-offset="612">
-              <caret line="29" column="44" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
+            <state vertical-scroll-proportion="-10.846154" vertical-offset="7" max-vertical-offset="544">
+              <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="my-quotes.liquid" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_notes/my-quotes.liquid">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="6696" max-vertical-offset="7327">
+              <caret line="425" column="0" selection-start-line="425" selection-start-column="0" selection-end-line="425" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main-product.liquid" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_notes/main-product.liquid">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8188277" vertical-offset="16182" max-vertical-offset="16745">
+              <caret line="979" column="0" selection-start-line="979" selection-start-column="0" selection-end-line="979" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QuoteController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/QuoteController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.9818182" vertical-offset="8859" max-vertical-offset="9537">
+              <caret line="585" column="60" selection-start-line="585" selection-start-column="60" selection-end-line="585" selection-end-column="60" />
               <folding>
-                <element signature="e#7#35#0#PHP" expanded="true" />
+                <element signature="e#14847#16663#0#PHP" expanded="false" />
+                <element signature="e#16680#17164#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FeHomeController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/FeHomeController.php">
+      <file leaf-file-name="data.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_notes/data.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="1785">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+              <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Quotes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/Quotes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.65384614" vertical-offset="1377" max-vertical-offset="2397">
+              <caret line="83" column="1" selection-start-line="83" selection-start-column="1" selection-end-line="83" selection-end-column="1" />
               <folding>
-                <element signature="e#38#76#0#PHP" expanded="true" />
+                <marker date="1721220160037" expanded="true" signature="2073:2247" placeholder="SELECT count..." />
+                <marker date="1721220160037" expanded="true" signature="3737:4325" placeholder="SELECT id, q..." />
+                <marker date="1721220160037" expanded="true" signature="4474:4519" placeholder="SELECT * FRO..." />
+                <marker date="1721220160037" expanded="true" signature="4720:4838" placeholder="SELECT * FRO..." />
+                <marker date="1721220160037" expanded="true" signature="4977:5082" placeholder="SELECT * FRO..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QBController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/QBController.php">
+      <file leaf-file-name="list_post.blade 2.php" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/list_post.blade 2.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15083799" vertical-offset="1534" max-vertical-offset="7480">
-              <caret line="288" column="53" selection-start-line="288" selection-start-column="53" selection-end-line="288" selection-end-column="53" />
-              <folding>
-                <element signature="e#1459#3609#0#PHP" expanded="false" />
-                <element signature="e#3611#4987#0#PHP" expanded="false" />
-                <element signature="e#4990#7469#0#PHP" expanded="false" />
-                <marker date="1721042054039" expanded="true" signature="6013:6039" placeholder="Select * fro..CustomerType..." />
-                <marker date="1721042054039" expanded="true" signature="8511:8533" placeholder="Select * fro..Customer..." />
-                <marker date="1721042054039" expanded="true" signature="18679:18728" placeholder="select * fro..Customer..." />
-                <marker date="1721042054039" expanded="true" signature="18679:18739" placeholder="select * fro..Customer..." />
-              </folding>
+            <state vertical-scroll-proportion="-19.346153" vertical-offset="551" max-vertical-offset="1156">
+              <caret line="62" column="3" selection-start-line="62" selection-start-column="3" selection-end-line="62" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list_post.blade 3.php" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/list_post.blade 3.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="663">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -72,7 +129,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/asset_be/custom/quickbook/refreshToken.php" />
         <option value="$PROJECT_DIR$/laravel_app/resources/views/backend/layout/header.blade.php" />
         <option value="$PROJECT_DIR$/laravel_app/resources/views/backend/layout/basic.blade.php" />
         <option value="$PROJECT_DIR$/laravel_app/resources/views/backend/users/edit.blade.php" />
@@ -108,21 +164,22 @@
         <option value="$PROJECT_DIR$/laravel_app/app/Http/Controllers/Admin/SampleController.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/SampleController.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/QBCustomerTypes.php" />
-        <option value="$PROJECT_DIR$/_notes/my-quotes.liquid" />
-        <option value="$PROJECT_DIR$/_notes/main-product.liquid" />
         <option value="$PROJECT_DIR$/laravel_app/app/Http/Controllers/QBController.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/laravel_app/config/constant.php" />
-        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/QuoteController.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/constant.php" />
         <option value="$PROJECT_DIR$/laravel_app/app/Http/Controllers/Admin/QuoteController.php" />
-        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/Quotes.php" />
-        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/list_post.blade.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/list.blade.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/api.php" />
         <option value="$PROJECT_DIR$/laravel_app/app/Http/Controllers/FeHomeController.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/QBController.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/FeHomeController.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/list_post.blade 2.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/Quotes.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/list_post.blade.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/QuoteController.php" />
+        <option value="$PROJECT_DIR$/_notes/my-quotes.liquid" />
+        <option value="$PROJECT_DIR$/_notes/main-product.liquid" />
       </list>
     </option>
   </component>
@@ -326,7 +383,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="E:/xampp/htdocs/pro_dev/square-custom-apps/_square-latest-custom-app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../haulwayz-freight-broker-portal" />
     <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
@@ -357,15 +414,15 @@
       <BehatRunner />
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -393,7 +450,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23298033" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24432677" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -648,20 +705,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_notes/my-quotes.liquid">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9396092" vertical-offset="6662" max-vertical-offset="7293">
-          <caret line="423" column="0" selection-start-line="423" selection-start-column="0" selection-end-line="423" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_notes/main-product.liquid">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9396092" vertical-offset="17015" max-vertical-offset="17646">
-          <caret line="1032" column="0" selection-start-line="1032" selection-start-column="0" selection-end-line="1032" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/laravel_app/app/Http/Controllers/QBController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.56299216" vertical-offset="2128" max-vertical-offset="6715">
@@ -680,57 +723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.807693" vertical-offset="1394" max-vertical-offset="2346">
           <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-          <folding>
-            <marker date="1720727146596" expanded="true" signature="-1:-1" placeholder="SELECT count..." />
-            <marker date="1720727146596" expanded="true" signature="-1:-1" placeholder="SELECT id, q..." />
-            <marker date="1720727146596" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1720727146596" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1720727146596" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel_app/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6014898" vertical-offset="0" max-vertical-offset="537">
-          <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel_app/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.81005585" vertical-offset="41" max-vertical-offset="578">
-          <caret line="69" column="50" selection-start-line="69" selection-start-column="50" selection-end-line="69" selection-end-column="50" />
-          <folding>
-            <element signature="e#1362#3403#1#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel_app/app/Http/Controllers/FeHomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.87636364" vertical-offset="317" max-vertical-offset="918">
-          <caret line="54" column="5" selection-start-line="50" selection-start-column="4" selection-end-line="54" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/UsersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.345454" vertical-offset="4590" max-vertical-offset="5423">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.961538" vertical-offset="0" max-vertical-offset="612">
-          <caret line="29" column="44" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
-          <folding>
-            <element signature="e#7#35#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -738,7 +730,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.48363635" vertical-offset="266" max-vertical-offset="816">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -746,7 +737,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.1418183" vertical-offset="1728" max-vertical-offset="2278">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -754,9 +744,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.12662943" vertical-offset="153" max-vertical-offset="799">
           <caret line="5" column="41" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="41" />
-          <folding>
-            <marker date="1676995794965" expanded="true" signature="-1:-1" placeholder="SELECT id FR..refund_log..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -764,17 +751,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.58363634" vertical-offset="3368" max-vertical-offset="3944">
           <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel_app/app/Http/Controllers/Admin/UsersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.123636365" vertical-offset="0" max-vertical-offset="5593">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-          <folding>
-            <element signature="e#46#86#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -782,55 +758,115 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="8636">
           <caret line="6" column="38" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel_app/app/Http/Controllers/FeHomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16014898" vertical-offset="1070" max-vertical-offset="1615">
+          <caret line="78" column="45" selection-start-line="78" selection-start-column="45" selection-end-line="78" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel_app/app/Http/Controllers/Admin/UsersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.34" vertical-offset="255" max-vertical-offset="3740">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
           <folding>
-            <element signature="e#13122#14068#0#PHP" expanded="false" />
-            <element signature="e#22082#27676#0#PHP" expanded="false" />
+            <element signature="e#880#4912#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/FeHomeController.php">
+    <entry file="file://$PROJECT_DIR$/laravel_app/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="1785">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.3011811" vertical-offset="34" max-vertical-offset="578">
+          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
           <folding>
-            <element signature="e#38#76#0#PHP" expanded="true" />
+            <element signature="e#1362#3403#1#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/list_post.blade 3.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/list_post.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.076923" vertical-offset="364" max-vertical-offset="1088">
+          <caret line="46" column="119" selection-start-line="46" selection-start-column="119" selection-end-line="46" selection-end-column="119" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/Quotes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614" vertical-offset="1377" max-vertical-offset="2397">
+          <caret line="83" column="1" selection-start-line="83" selection-start-column="1" selection-end-line="83" selection-end-column="1" />
+          <folding>
+            <marker date="1721220160037" expanded="true" signature="2073:2247" placeholder="SELECT count..." />
+            <marker date="1721220160037" expanded="true" signature="3737:4325" placeholder="SELECT id, q..." />
+            <marker date="1721220160037" expanded="true" signature="4474:4519" placeholder="SELECT * FRO..." />
+            <marker date="1721220160037" expanded="true" signature="4720:4838" placeholder="SELECT * FRO..." />
+            <marker date="1721220160037" expanded="true" signature="4977:5082" placeholder="SELECT * FRO..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_notes/data.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27175844" vertical-offset="0" max-vertical-offset="563">
-          <caret line="9" column="39" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/User.php">
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/list_post.blade 2.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.04" vertical-offset="1122" max-vertical-offset="2295">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-19.346153" vertical-offset="551" max-vertical-offset="1156">
+          <caret line="62" column="3" selection-start-line="62" selection-start-column="3" selection-end-line="62" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/QuoteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9818182" vertical-offset="8859" max-vertical-offset="9537">
+          <caret line="585" column="60" selection-start-line="585" selection-start-column="60" selection-end-line="585" selection-end-column="60" />
           <folding>
-            <marker date="1721031626958" expanded="true" signature="-1:-1" placeholder="SELECT count..." />
-            <marker date="1721031626958" expanded="true" signature="-1:-1" placeholder="SELECT id, f..." />
+            <element signature="e#14847#16663#0#PHP" expanded="false" />
+            <element signature="e#16680#17164#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/QBController.php">
+    <entry file="file://$PROJECT_DIR$/laravel_app/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15083799" vertical-offset="1534" max-vertical-offset="7480">
-          <caret line="288" column="53" selection-start-line="288" selection-start-column="53" selection-end-line="288" selection-end-column="53" />
-          <folding>
-            <element signature="e#1459#3609#0#PHP" expanded="false" />
-            <element signature="e#3611#4987#0#PHP" expanded="false" />
-            <element signature="e#4990#7469#0#PHP" expanded="false" />
-            <marker date="1721042054039" expanded="true" signature="6013:6039" placeholder="Select * fro..CustomerType..." />
-            <marker date="1721042054039" expanded="true" signature="8511:8533" placeholder="Select * fro..Customer..." />
-            <marker date="1721042054039" expanded="true" signature="18679:18728" placeholder="select * fro..Customer..." />
-            <marker date="1721042054039" expanded="true" signature="18679:18739" placeholder="select * fro..Customer..." />
-          </folding>
+        <state vertical-scroll-proportion="-10.846154" vertical-offset="7" max-vertical-offset="544">
+          <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_notes/my-quotes.liquid">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6696" max-vertical-offset="7327">
+          <caret line="425" column="0" selection-start-line="425" selection-start-column="0" selection-end-line="425" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_notes/main-product.liquid">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8188277" vertical-offset="16182" max-vertical-offset="16745">
+          <caret line="979" column="0" selection-start-line="979" selection-start-column="0" selection-end-line="979" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -55,6 +55,7 @@
 {% endif %}
 
 {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+{{ 'quote-popup.css' | asset_url | stylesheet_tag }}
 
 <script src="{{ 'product-builder.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'accordion.js' | asset_url }}" defer="defer"></script>
@@ -486,91 +487,7 @@
                           </div>
                         {% endfor %}
 
-                        {% comment %}
-                          {% unless is_background_not_blank %}
-                            <custom-accordion class="product__builder-additional js-product-builder-color-swatches-wrapper">
-                              <div class="custom-select js-accordion-toggle">
-                                <input name="properties[Color-1]" id="color-1" type="hidden" class="product__builder-color-input js-product-builder-color-input js-product-builder-input">
-
-                                <div class="custom-select__select">Select Color 1</div>
-
-                                {% render 'icon-color-select' %}
-                              </div>
-
-                              <div class="product__builder-color-swatches-wrapper js-accordion-content">
-                                <div class="product__builder-color-swatches-container">
-                                  <input type="text" placeholder="Enter an ARS Number and Press Enter" class="product__builder-color-swatches-input js-product-builder-color-swatches-input">
-
-                                  <div class="product__builder-color-swatches-grid js-color-swatch-grid">
-                                    {% for color_hex in color_hexes %}
-                                      {% liquid
-                                        assign current_index = forloop.index0
-                                        assign color_title = color_titles[current_index]
-                                      %}
-
-                                      {% if color_hex != blank and color_title != blank %}
-                                        <div data-title="{{- color_title -}}" class="product__builder-color-swatch js-color-swatch-grid-item">
-                                          <button type="button" style="background-color: {{ color_hex }}" data-title="{{- color_title -}}" data-value="{{- color_hex -}}" class="product__builder-color-swatch-button js-product-builder-color-swatch">
-                                            {{- color_hex -}}
-                                          </button>
-
-                                          <span class="product__builder-color-swatch-title">
-                                            {{- color_title -}}
-                                          </span>
-                                        </div>
-                                      {% endif %}
-                                    {% endfor %}
-                                  </div>
-                                </div>
-                              </div>
-                            </custom-accordion>
-                          {% endunless %}
-
-                          {% for i in (1..colors) %}
-                            {% unless is_background_not_blank %}
-                            {% assign color_index = forloop.index | plus: 1 %}
-                              {% else %}
-                            {% assign color_index = forloop.index | plus: 0 %}
-                            {% endunless %}
-
-                            <custom-accordion class="product__builder-additional js-product-builder-color-swatches-wrapper">
-                              <div class="custom-select js-accordion-toggle">
-                                <input name="properties[Color-{{- color_index -}}]" id="color-{{- color_index -}}" type="hidden" class="product__builder-color-input js-product-builder-color-input js-product-builder-input">
-
-                                <div class="custom-select__select">Select Color {{ color_index }}</div>
-
-                                {% render 'icon-color-select' %}
-                              </div>
-
-                              <div class="product__builder-color-swatches-wrapper js-accordion-content">
-                                <div class="product__builder-color-swatches-container">
-                                  <input type="text" placeholder="Enter an ARS Number and Press Enter" class="product__builder-color-swatches-input js-product-builder-color-swatches-input">
-
-                                  <div class="product__builder-color-swatches-grid js-color-swatch-grid">
-                                    {% for color_hex in color_hexes %}
-                                      {% liquid
-                                        assign current_index = forloop.index0
-                                        assign color_title = color_titles[current_index]
-                                      %}
-
-                                      {% if color_hex != blank and color_title != blank %}
-                                        <div data-title="{{- color_title -}}" class="product__builder-color-swatch js-color-swatch-grid-item">
-                                          <button type="button" style="background-color: {{ color_hex }}" data-title="{{- color_title -}}" data-value="{{- color_hex -}}" class="product__builder-color-swatch-button js-product-builder-color-swatch">
-                                            {{- color_hex -}}
-                                          </button>
-
-                                          <span class="product__builder-color-swatch-title">
-                                            {{- color_title -}}
-                                          </span>
-                                        </div>
-                                      {% endif %}
-                                    {% endfor %}
-                                  </div>
-                                </div>
-                              </div>
-                            </custom-accordion>
-                          {% endfor %}
-                        {% endcomment %}
+                        
                       </div>
 
                       <h3 class="product__builder-group-label space-pricing  print-hidden product__builder--has-info">
@@ -741,6 +658,11 @@
                     </div>
                   </div>
 
+                  <button type="button" class="btn btn--full-width js-product__submit-quote product__builder-submit">
+                    {{ 'products.product.request_a_quote' | t }}
+                  </button>
+
+                  {% comment %}
                   <button
                     type="button"
                     class="btn btn--full-width product__builder-submit"
@@ -748,6 +670,7 @@
                   >
                     {{ 'products.product.request_a_quote' | t }}
                   </button>
+                  {% endcomment %}
 
                   <div class="product__builder-row">
                     {% render 'wishlist-button' %}
@@ -770,6 +693,7 @@
                       {{ 'products.product.view_all_rug_designs' | t }}
                     </a>
                   {% endif %}
+
 
                   <input
                     class="hidden"
@@ -900,8 +824,27 @@
   {% endif %}
 </div>
 
+<div class="submit-quote__popup">
+  <button type="button" class="js-product__submit-quote submit-quote__popup--close">
+    {% render 'icon-close' %}
+    <span class="visually-hidden">Close</span>
+  </button>
+
+  <input type="text" class="input" placeholder="Enter Project Name" id="project_name">
+  <br><br>
+
+  <button
+    type="button"
+    class="btn btn--full-width product__builder-submit"
+    id="request_quote_btn"
+  >
+    Submit & Download
+  </button>
+</div>
+
 {% if customer %}
   <script>
+    var API_URL = 'https://phplaravel-1013056-4015744.cloudwaysapps.com/api';
     function getSelectedRadioValue(name) {
       var elements = document.querySelectorAll('input[type="radio"][name="' + name + '"]');
       for (var i = 0; i < elements.length; i++) {
@@ -931,11 +874,14 @@
         }
       }
 
+      let project_name = document.querySelector('#project_name').value || "";
       let WidthFeet = document.querySelector('#WidthFeet').value || "";
       let WidthInches = document.querySelector('#WidthInches').value || "";
       let LengthFeet = document.querySelector('#LengthFeet').value || "";
       let LengthInches = document.querySelector('#LengthInches').value || "";
       let skuText = document.querySelector('.product__builder-input-box em').innerText || "";
+
+      if(project_name==''){ alert('Please enter project name'); return false; }
 
       var formData = new FormData();
       formData.append('shopify_customer_id', '{{ customer.id }}');
@@ -953,17 +899,17 @@
       formData.append('sku', skuText);
       formData.append('estimated_price', document.querySelector('.js-product__builder-group-label-additional em')?.innerHTML || "");
 
+      formData.append('project_name', project_name);
       formData.append('width_feet', WidthFeet);
       formData.append('width_inch', WidthInches);
       formData.append('length_feet', LengthFeet);
       formData.append('length_inch', LengthInches);
-      let rawResponseQuotePost = await fetch('https://phplaravel-1013056-4015744.cloudwaysapps.com/api/quote/add', {
+      let rawResponseQuotePost = await fetch(API_URL+'/quote/add', {
           method: 'POST', body: formData
       });
       let objQuotePost = await rawResponseQuotePost.json();
       if(objQuotePost.SUCCESS == 'TRUE'){
-        alert(objQuotePost.MESSAGE);
-        top.location.href = "/pages/my-quotes";
+        top.location.href = `${API_URL}/quotes/{{ customer.id }}/${objQuotePost.qb_estimate_id}/download`;
       }else{
         alert(objQuotePost.MESSAGE);
       }
@@ -976,6 +922,7 @@
   </script>
 {% endif %}
 
+              
 {% schema %}
 {
   "name": "Product template",

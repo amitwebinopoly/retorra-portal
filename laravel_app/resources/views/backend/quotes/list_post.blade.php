@@ -5,14 +5,17 @@
                 <thead>
                 <tr>
                     <th>#</th>
+                    <th>Customer</th>
                     <th>Quote No.</th>
+                    <th>Pattern</th>
                     <th>Material</th>
                     <th>Shape</th>
-                    <th>Native arm pom colors</th>
-                    <th>Own arm pom colors</th>
+                    <th>Native ars pom colors</th>
+                    <th>Own ars pom colors</th>
                     <th>Size</th>
                     <th>Project Name</th>
                     <th>Status</th>
+                    <th>Action</th>
                 </tr>
                 </thead>
 
@@ -25,7 +28,9 @@
                 ?>
                 <tr>
                     <td><?php echo $sr; ?></td>
+                    <td><?php echo $single->shopify_customer_name;?></td>
                     <td><?php echo $single->quote_number;?></td>
+                    <td><?php echo $single->shopify_product_title;?></td>
                     <td><?php echo $single->material;?></td>
                     <td><?php echo $single->shape;?></td>
                     <td>
@@ -38,6 +43,11 @@
                     <td><?php echo $size;?></td>
                     <td><?php echo $single->project_name;?></td>
                     <td><?php echo $single->qb_status;?></td>
+                    <td>
+                        <a href="{{route('api_download_quote_pdf',[$single->shopify_customer_id,$single->qb_estimate_id])}}" class="btn btn-primary btn-circle btn-sm" target="_blank">
+                            <i class="fas fa-download"></i>
+                        </a>
+                    </td>
                 </tr>
                 <?php
                 $sr++;
