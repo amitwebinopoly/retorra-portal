@@ -35,7 +35,7 @@ class RedirectIfAuthenticated
             $auth_user_role=$User->select_fields_by_id(Auth::user()->id, 'role');
             if( (isset($auth_user_role[0]->role))&&(!empty($auth_user_role[0]->role)) ){
                 $role = $auth_user_role[0]->role;
-                if( ($role=='Admin' || $role=='Designer' || $role=='Showroom')){
+                if( ($role=='Admin' || $role=='Showroom')){
                     return $next($request);
                 }else{
                     Auth::logout();

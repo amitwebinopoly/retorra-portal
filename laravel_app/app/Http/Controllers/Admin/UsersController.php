@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\InexController;
+use App\Models\QBCustomerTypes;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Model;
@@ -31,7 +32,8 @@ class UsersController extends Controller {
         return view('backend.users.list', $this->param);
     }
     public function list_user_post(){
-        $User=new User();
+        $User = new User();
+        $QBCustomerTypes = new QBCustomerTypes();
         $InexController = new InexController();
 
         $record_count=0;
@@ -62,9 +64,15 @@ class UsersController extends Controller {
             }
         }*/
 
-
-        if( (isset($_REQUEST['role']))&&(!empty($_REQUEST['role'])) ){
+        /*if( (isset($_REQUEST['role']))&&(!empty($_REQUEST['role'])) ){
             $User->set_role($_REQUEST['role']);
+        }*/
+
+        if(Auth::user()->role == 'Showroom'){
+            $qb_ct_data = $QBCustomerTypes->select_field_by_name(Auth::user()->name);
+            if(isset($qb_ct_data[0]->qb_customer_type_id) && !empty($qb_ct_data[0]->qb_customer_type_id)){
+                $User->set_customer_type_ref($qb_ct_data[0]->qb_customer_type_id);
+            }
         }
 
         $all_count=$User->count_all($keyword);
@@ -318,6 +326,41 @@ class UsersController extends Controller {
             Session::put('MESSAGE', 'Error while updating user.');
         }
         //return Redirect::route('view_user',[$_POST['id']]);
+        return redirect()->back();
+    }
+    public function edit_user_password_post(Request $request){
+        $this->validate($request, [
+            'old_password' => 'required',
+            'new_password' => 'required'
+        ]);
+        $User = new User();
+
+        $user_data = $User->select_fields_by_id($_POST['id']);
+        if(!empty($user_data)){
+            if (Hash::check(trim($_POST['old_password']), $user_data[0]->password)) {
+                $arr = [
+                    'password' => trim(Hash::make($_POST['new_password'])),
+                    'updated_at' => date('Y-m-d h:i:s')
+                ];
+                $update_user = $User->update_user($_POST['id'],$arr);
+
+                if(!empty($update_user)){
+                    Session::put('SUCCESS','TRUE');
+                    Session::put('MESSAGE', 'Updated successfully.');
+                }else{
+                    Session::put('SUCCESS','FALSE');
+                    Session::put('MESSAGE', 'Error while updating user.');
+                }
+            }else{
+                Session::put('SUCCESS','FALSE');
+                Session::put('MESSAGE','Old password is wrong.');
+                return redirect()->back();
+            }
+        }else{
+            Session::put('SUCCESS','FALSE');
+            Session::put('MESSAGE', 'Invalid request.');
+        }
+
         return redirect()->back();
     }
 

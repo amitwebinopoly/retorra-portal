@@ -11,8 +11,10 @@
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-2 text-gray-800">Users</h1>
             <div>
+                @if($user_param['role']=='Admin')
                 <a href="{{route('add_user')}}" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm">Add New Admin</a>
                 <a href="javascript:;" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm" id="sync_customer_qb_btn">Sync Customers from Quickbook</a>
+                @endif
             </div>
         </div>
 

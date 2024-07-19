@@ -10,6 +10,8 @@ class Quotes extends Model{
 
     protected $shopify_customer_id = '';
     public function set_shopify_customer_id($val){ $this->shopify_customer_id=$val; }
+    protected $qb_customer_ref_ids = '';
+    public function set_qb_customer_ref_ids($val){ $this->qb_customer_ref_ids=$val; }
     protected $status = '';
     public function set_status($val){ $this->status=$val; }
 
@@ -53,6 +55,10 @@ class Quotes extends Model{
         if(isset($this->shopify_customer_id) && !empty($this->shopify_customer_id) ){
             $cond_shopify_customer_id = "AND shopify_customer_id = '".$this->shopify_customer_id."'";
         }
+        $cond_qb_customer_ref_ids = "";
+        if(isset($this->qb_customer_ref_ids) && !empty($this->qb_customer_ref_ids) ){
+            $cond_qb_customer_ref_ids = "AND qb_customer_ref_id IN (".$this->qb_customer_ref_ids.")";
+        }
         $cond_status = "";
         if(isset($this->status) && !empty($this->status) ){
             $cond_status = "AND status = '".$this->status."'";
@@ -63,6 +69,7 @@ class Quotes extends Model{
                 WHERE 1
                 $cond_keyword
                 $cond_shopify_customer_id
+                $cond_qb_customer_ref_ids
                 $cond_status
             ";
         $results = DB::select( $sql );
@@ -89,6 +96,10 @@ class Quotes extends Model{
         if(isset($this->shopify_customer_id) && !empty($this->shopify_customer_id) ){
             $cond_shopify_customer_id = "AND shopify_customer_id = '".$this->shopify_customer_id."'";
         }
+        $cond_qb_customer_ref_ids = "";
+        if(isset($this->qb_customer_ref_ids) && !empty($this->qb_customer_ref_ids) ){
+            $cond_qb_customer_ref_ids = "AND qb_customer_ref_id IN (".$this->qb_customer_ref_ids.")";
+        }
         $cond_status = "";
         if(isset($this->status) && !empty($this->status) ){
             $cond_status = "AND status = '".$this->status."'";
@@ -109,6 +120,7 @@ class Quotes extends Model{
                 WHERE 1
                 $cond_keyword
                 $cond_shopify_customer_id
+                $cond_qb_customer_ref_ids
                 $cond_status
 
                 $cond_order

@@ -8,7 +8,7 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Role</th>
-                    <th>Action</th>
+                    @if($user_param['role']=='Admin')<th>Action</th>@endif
                 </tr>
                 </thead>
 
@@ -22,7 +22,9 @@
                         <td><?php echo $single->first_name.' '.$single->last_name;?></td>
                         <td><?php echo $single->email;?></td>
                         <td><?php echo $single->role;?></td>
+                        @if($user_param['role']=='Admin')
                         <td><a href="{{route('edit_user',[$single->id])}}" class="btn btn-primary btn-sm">Edit</a></td>
+                        @endif
                     </tr>
                     <?php
                     $sr++;

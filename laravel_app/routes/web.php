@@ -47,6 +47,7 @@ Route::group(['prefix' => 'admin'], function() {
         Route::post('add_user_post',[ UsersController::class,'add_user_post'])->name('add_user_post');
         Route::get('users/{id}',[ UsersController::class,'edit_user'])->name('edit_user');
         Route::post('edit_user_post',[ UsersController::class,'edit_user_post'])->name('edit_user_post');
+        Route::post('edit_user_password_post',[ UsersController::class,'edit_user_password_post'])->name('edit_user_password_post');
 
         Route::get('samples',[ SampleController::class,'list_sample'])->name('list_sample');
         Route::post('list_sample_post',[ SampleController::class,'list_sample_post'])->name('list_sample_post');
@@ -60,8 +61,6 @@ Route::group(['prefix' => 'admin'], function() {
 
         Route::get('settings',[ HomeController::class,'settings'])->name('settings');
         Route::post('settings_post',[ HomeController::class,'settings_post'])->name('settings_post');
-
-
     });
 });
 

@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\QBCustomerTypes;
 use App\Models\Quotes;
 use App\Models\Settings;
 use App\Models\User;
@@ -33,7 +34,6 @@ class HomeController extends Controller {
 		if(isset($_POST['login_email_mob']) && !empty($_POST['login_email_mob']) &&
 			isset($_POST['login_password']) && !empty($_POST['login_password'])
 		){
-
 			$User = new User();
 			$email_mob = trim($_POST['login_email_mob']);
 			$password = trim($_POST['login_password']);
@@ -63,24 +63,51 @@ class HomeController extends Controller {
 
 	public function admin_home(){
 		$User = new User();
+		$QBCustomerTypes = new QBCustomerTypes();
 		$Quotes = new Quotes();
 
-		$count_all = $User->count_all('Admin');
-		$this->param['count_admin'] = $count_all[0]->count;
+		if(Auth::user()->role == 'Admin'){
+			$count_all = $User->count_all('Admin');
+			$this->param['count_admin'] = $count_all[0]->count;
 
-		$count_all = $User->count_all('Designer');
-		$this->param['count_designer'] = $count_all[0]->count;
+			$count_all = $User->count_all('Showroom');
+			$this->param['count_showroom'] = $count_all[0]->count;
 
-		$count_all = $User->count_all('Showroom');
-		$this->param['count_showroom'] = $count_all[0]->count;
+			$count_all = $User->count_all('Designer');
+			$this->param['count_designer'] = $count_all[0]->count;
 
-		$Quotes->set_status('Draft');
-		$count_all = $Quotes->count_all('');
-		$this->param['count_quote'] = $count_all[0]->count;
+			$Quotes->set_status('Draft');
+			$count_all = $Quotes->count_all('');
+			$this->param['count_quote'] = $count_all[0]->count;
 
-		$Quotes->set_status('Order-Placed');
-		$count_all = $Quotes->count_all('');
-		$this->param['count_order'] = $count_all[0]->count;
+			$Quotes->set_status('Order-Placed');
+			$count_all = $Quotes->count_all('');
+			$this->param['count_order'] = $count_all[0]->count;
+		}else if(Auth::user()->role == 'Showroom'){
+
+			$qb_ct_data = $QBCustomerTypes->select_field_by_name(Auth::user()->name);
+			$User->set_customer_type_ref(@$qb_ct_data[0]->qb_customer_type_id);
+			$count_all = $User->count_all('Designer');
+			$this->param['count_designer'] = $count_all[0]->count;
+
+			$count_quote = 0;
+			$count_order = 0;
+			$select_all_designer = $User->get_all_designer_by_showroom(@$qb_ct_data[0]->qb_customer_type_id);
+			if(isset($select_all_designer[0]->customer_refs) && !empty($select_all_designer[0]->customer_refs)){
+				$Quotes->set_qb_customer_ref_ids($select_all_designer[0]->customer_refs);
+
+				$Quotes->set_status('Draft');
+				$count_all = $Quotes->count_all('');
+				$count_quote = $count_all[0]->count;
+
+				$Quotes->set_status('Order-Placed');
+				$count_all = $Quotes->count_all('');
+				$count_order = $count_all[0]->count;
+			}
+
+			$this->param['count_quote'] = $count_quote;
+			$this->param['count_order'] = $count_order;
+		}
 
 		$this->param['date_formate'] = Config::get('constant.DATE_FORMATE');
 		return view('backend.home',$this->param);

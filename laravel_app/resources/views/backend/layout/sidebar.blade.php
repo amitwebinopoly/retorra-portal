@@ -60,19 +60,23 @@
         </a>
     </li>
 
+    @if($user_param['role']=='Admin')
     <li class="nav-item sb_check_active" data-route="list_sample">
         <a class="nav-link" href="{{route('list_sample')}}">
             <i class="fas fa-fw fa-table"></i>
             <span>Samples</span>
         </a>
     </li>
+    @endif
 
+    @if($user_param['role']=='Admin')
     <li class="nav-item sb_check_active" data-route="settings">
         <a class="nav-link" href="{{route('settings')}}">
             <i class="fas fa-fw fa-cog"></i>
             <span>Settings</span>
         </a>
     </li>
+    @endif
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

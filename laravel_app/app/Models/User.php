@@ -46,6 +46,9 @@ class User extends Authenticatable
 
     protected $table = 'users';
 
+    protected $customer_type_ref = '';
+    public function set_customer_type_ref($val){ $this->customer_type_ref=$val; }
+
     public function insert_user($arr){
         return DB::table($this->table)
             ->insertGetId($arr);
@@ -85,6 +88,11 @@ class User extends Authenticatable
                 role = '$keyword'
             )";
         }
+        $cond_customer_type_ref = "";
+        if(isset($this->customer_type_ref) && !empty($this->customer_type_ref) ){
+            $cond_customer_type_ref = "AND customer_type_ref='".$this->customer_type_ref."'";
+        }
+
         /*$cond_start_end = "";
         if(isset($this->start_date) && !empty($this->start_date) && isset($this->end_date) && !empty($this->end_date)){
             $cond_start_end = "AND cu_add_date BETWEEN ".$this->start_date." AND ".$this->end_date."";
@@ -95,6 +103,7 @@ class User extends Authenticatable
                 FROM `$this->table`
                 WHERE 1
                 $cond_keyword
+                $cond_customer_type_ref
             ";
         $results = DB::select( $sql );
         return $results;
@@ -108,6 +117,10 @@ class User extends Authenticatable
                 email LIKE '%$keyword%' OR
                 role = '$keyword'
             )";
+        }
+        $cond_customer_type_ref = "";
+        if(isset($this->customer_type_ref) && !empty($this->customer_type_ref) ){
+            $cond_customer_type_ref = "AND customer_type_ref='".$this->customer_type_ref."'";
         }
         /*$cond_start_end = "";
         if(isset($this->start_date) && !empty($this->start_date) && isset($this->end_date) && !empty($this->end_date)){
@@ -124,8 +137,21 @@ class User extends Authenticatable
                 FROM `$this->table`
                 WHERE 1
                 $cond_keyword
+                $cond_customer_type_ref
+
                 $cond_order
                 LIMIT $start,$end
+            ";
+        $results = DB::select( $sql );
+        return $results;
+    }
+
+    public function get_all_designer_by_showroom($customer_type_ref){
+        $sql="
+                SELECT GROUP_CONCAT(customer_ref) as customer_refs
+                FROM `$this->table`
+                WHERE role='Designer'
+                AND customer_type_ref='".$customer_type_ref."'
             ";
         $results = DB::select( $sql );
         return $results;

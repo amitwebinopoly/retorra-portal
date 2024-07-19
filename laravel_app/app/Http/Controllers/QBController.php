@@ -295,7 +295,7 @@ class QBController extends Controller {
 							$arr['updated_at'] = date('Y-m-d h:i:s');
 							$User->update_user($cus_exist[0]->id, $arr);
 						}else{
-							$arr['password'] = '';
+							$arr['password'] = $role=='Showroom'?(Hash::make('Showroom@99')):"";
 							$arr['status'] = 'Active';
 							$arr['created_at'] = date('Y-m-d h:i:s');
 							$User->insert_user($arr);

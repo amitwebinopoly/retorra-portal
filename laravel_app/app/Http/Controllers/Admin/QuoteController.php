@@ -38,6 +38,8 @@ class QuoteController extends Controller {
     }
     public function list_quote_post(){
         $Quotes = new Quotes();
+        $User = new User();
+        $QBCustomerTypes = new QBCustomerTypes();
         $InexController = new InexController();
 
         $record_count=0;
@@ -79,9 +81,24 @@ class QuoteController extends Controller {
             }
         }*/
 
-        $Quotes->set_status('Draft');
-        $all_count = $Quotes->count_all($keyword);
-        $all_list = $Quotes->select_all($start,$end,$keyword,$sort_field,$sort_type);
+        $all_count = [];
+        $all_list = [];
+        if(Auth::user()->role == 'Showroom'){
+            $qb_ct_data = $QBCustomerTypes->select_field_by_name(Auth::user()->name);
+            $select_all_designer = $User->get_all_designer_by_showroom(@$qb_ct_data[0]->qb_customer_type_id);
+            if(isset($select_all_designer[0]->customer_refs) && !empty($select_all_designer[0]->customer_refs)){
+                $Quotes->set_qb_customer_ref_ids($select_all_designer[0]->customer_refs);
+
+                $Quotes->set_status('Draft');
+                $all_count = $Quotes->count_all($keyword);
+                $all_list = $Quotes->select_all($start,$end,$keyword,$sort_field,$sort_type);
+            }
+        }
+        else{
+            $Quotes->set_status('Draft');
+            $all_count = $Quotes->count_all($keyword);
+            $all_list = $Quotes->select_all($start,$end,$keyword,$sort_field,$sort_type);
+        }
 
         if( (isset($all_count[0]->count))&&(!empty($all_count[0]->count)) ){
             $record_count=$all_count[0]->count;
@@ -149,6 +166,8 @@ class QuoteController extends Controller {
     }
     public function list_order_post(){
         $Quotes = new Quotes();
+        $User = new User();
+        $QBCustomerTypes = new QBCustomerTypes();
         $InexController = new InexController();
 
         $record_count=0;
@@ -190,9 +209,24 @@ class QuoteController extends Controller {
             }
         }*/
 
-        $Quotes->set_status('Order-Placed');
-        $all_count = $Quotes->count_all($keyword);
-        $all_list = $Quotes->select_all($start,$end,$keyword,$sort_field,$sort_type);
+        $all_count = [];
+        $all_list = [];
+        if(Auth::user()->role == 'Showroom'){
+            $qb_ct_data = $QBCustomerTypes->select_field_by_name(Auth::user()->name);
+            $select_all_designer = $User->get_all_designer_by_showroom(@$qb_ct_data[0]->qb_customer_type_id);
+            if(isset($select_all_designer[0]->customer_refs) && !empty($select_all_designer[0]->customer_refs)){
+                $Quotes->set_qb_customer_ref_ids($select_all_designer[0]->customer_refs);
+
+                $Quotes->set_status('Order-Placed');
+                $all_count = $Quotes->count_all($keyword);
+                $all_list = $Quotes->select_all($start,$end,$keyword,$sort_field,$sort_type);
+            }
+        }
+        else{
+            $Quotes->set_status('Order-Placed');
+            $all_count = $Quotes->count_all($keyword);
+            $all_list = $Quotes->select_all($start,$end,$keyword,$sort_field,$sort_type);
+        }
 
         if( (isset($all_count[0]->count))&&(!empty($all_count[0]->count)) ){
             $record_count=$all_count[0]->count;
