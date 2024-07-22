@@ -336,6 +336,8 @@ class QuoteController extends Controller {
                 'own_arm_pom_color' => $postData['own_arm_pom_color'],
                 'sku' => $postData['sku'],
                 'estimated_price' => $postData['estimated_price'],
+                'freight_price' => $postData['freight_price'],
+                'pad_price' => $postData['pad_price'],
                 'width_feet' => $postData['width_feet'],
                 'width_inch' => $postData['width_inch'],
                 'length_feet' => $postData['length_feet'],
@@ -372,6 +374,35 @@ class QuoteController extends Controller {
                 ],
                 "DocNumber" => $quote_number
             ];
+            if(isset($postData['freight_price']) && !empty($postData['freight_price']) && floatval($postData['freight_price'])>0 ){
+                $create_est_data['Line'][] = [
+                    "Description" => "",
+                    "Amount" => floatval($postData['freight_price']),
+                    "DetailType" => "SalesItemLineDetail",
+                    "SalesItemLineDetail" => [
+                        "UnitPrice" => floatval($postData['freight_price']),
+                        "Qty" => 1,
+                        "ItemRef" => [
+                            "value" => "5"	//this is hardcoded productId of "freight" - https://app.qbo.intuit.com/app/item?itemId=5
+                        ]
+                    ]
+                ];
+            }
+            if(isset($postData['pad_price']) && !empty($postData['pad_price']) && floatval($postData['pad_price'])>0 ){
+                $create_est_data['Line'][] = [
+                    "Description" => "",
+                    "Amount" => floatval($postData['pad_price']),
+                    "DetailType" => "SalesItemLineDetail",
+                    "SalesItemLineDetail" => [
+                        "UnitPrice" => floatval($postData['pad_price']),
+                        "Qty" => 1,
+                        "ItemRef" => [
+                            "value" => "15"	//this is hardcoded productId of "rug pad" - https://app.qbo.intuit.com/app/item?itemId=15
+                        ]
+                    ]
+                ];
+            }
+
             $create_estimate_res = $QBController->create_update_estimate($create_est_data);
             $create_estimate_res_arr = json_decode($create_estimate_res,1);
             if(isset($create_estimate_res_arr['SUCCESS']) && $create_estimate_res_arr['SUCCESS']=='TRUE'){

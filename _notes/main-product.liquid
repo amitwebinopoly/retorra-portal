@@ -253,7 +253,7 @@
                               >
                               <span class="product__builder-fake-input"></span>
 
-                              {{ product.metafields.accentuate.meterials[i].material }}
+                              <span>{{ product.metafields.accentuate.meterials[i].material }}</span>
                             </label>
                           </div>
                         {% endfor %}
@@ -353,7 +353,7 @@
 
                   {% if colors != blank and colors > 0 %}
                     <div class="product__builder-group-wrapper product__builder-colors">
-                      <h3 class="product__builder-group-label  print-hidden">
+                      <h3 class="product__builder-group-label">
                         {{ 'products.product.choose_your_colorway' | t }}
                       </h3>
 
@@ -487,7 +487,7 @@
                           </div>
                         {% endfor %}
 
-                        
+
                       </div>
 
                       <h3 class="product__builder-group-label space-pricing  print-hidden product__builder--has-info">
@@ -645,6 +645,31 @@
                         <p class="product__builder-info">{{ 'products.product.price_will_update' | t }}</p>
                       </div>
                     {% endif %}
+
+                    <div class="print-only {% unless show_price %} hidden{%endunless%}">
+                      <h3 class="product__builder-group-label space-pricing">
+                        Price for freight($5/sqft)
+                        <span class="product__builder-group-label-additional">
+                            {{- cart.currency.symbol -}}
+                            <em class="js-product__builder--for-freight">
+                              0
+                            </em>
+                        </span>
+                      </h3>
+                    </div>
+
+                    <div class="print-only {% unless show_price %} hidden{%endunless%}">
+                      <h3 class="product__builder-group-label space-pricing">
+                        Price for the pad($2/sqft)
+                        <span class="product__builder-group-label-additional">
+                            {{- cart.currency.symbol -}}
+                            <em class="js-product__builder--for-pad">
+                              0
+                            </em>
+                        </span>
+                      </h3>
+                    </div>
+
                     <div class="product__builder-input-box">
                       {% assign productTitle = product.title | truncate: 3, '' %}
                       {% if product.metafields.accentuate.abbreviation_in_drop_box != blank %}
@@ -838,7 +863,7 @@
     class="btn btn--full-width product__builder-submit"
     id="request_quote_btn"
   >
-    Submit & Download
+    Submit with Download
   </button>
 </div>
 
@@ -898,6 +923,8 @@
       formData.append('own_arm_pom_color', own_arm_pom_color.join('|'));
       formData.append('sku', skuText);
       formData.append('estimated_price', document.querySelector('.js-product__builder-group-label-additional em')?.innerHTML || "");
+      formData.append('freight_price', document.querySelector('.js-product__builder--for-freight')?.innerHTML || "");
+      formData.append('pad_price', document.querySelector('.js-product__builder--for-pad')?.innerHTML || "");
 
       formData.append('project_name', project_name);
       formData.append('width_feet', WidthFeet);
@@ -922,7 +949,7 @@
   </script>
 {% endif %}
 
-              
+
 {% schema %}
 {
   "name": "Product template",

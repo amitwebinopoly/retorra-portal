@@ -28,104 +28,19 @@
       <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/laravel_app/routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="544">
-              <caret line="26" column="45" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
+            <state vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="544">
+              <caret line="23" column="72" selection-start-line="23" selection-start-column="72" selection-end-line="23" selection-end-column="72" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SampleController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/laravel_app/app/Http/Controllers/Admin/SampleController.php">
+      <file leaf-file-name="main-product.liquid" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_notes/main-product.liquid">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="13.618182" vertical-offset="4064" max-vertical-offset="5712">
-              <caret line="205" column="39" selection-start-line="205" selection-start-column="20" selection-end-line="205" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.8188277" vertical-offset="16641" max-vertical-offset="17204">
+              <caret line="1006" column="0" selection-start-line="1006" selection-start-column="0" selection-end-line="1006" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sidebar.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/laravel_app/resources/views/backend/layout/sidebar.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0037243948" vertical-offset="1460" max-vertical-offset="2006">
-              <caret line="86" column="10" selection-start-line="86" selection-start-column="10" selection-end-line="86" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list_post.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/laravel_app/resources/views/backend/users/list_post.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.0" vertical-offset="0" max-vertical-offset="697">
-              <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/laravel_app/resources/views/backend/users/list.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="1513">
-              <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QuoteController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/laravel_app/app/Http/Controllers/Admin/QuoteController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.6538463" vertical-offset="2999" max-vertical-offset="10200">
-              <caret line="228" column="9" selection-start-line="228" selection-start-column="9" selection-end-line="228" selection-end-column="9" />
-              <folding>
-                <element signature="e#4259#6313#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/laravel_app/app/Http/Controllers/Admin/HomeController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.076923" vertical-offset="1088" max-vertical-offset="2839">
-              <caret line="96" column="89" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="89" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Quotes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/laravel_app/app/Models/Quotes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.115385" vertical-offset="874" max-vertical-offset="2601">
-              <caret line="74" column="14" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="14" />
-              <folding>
-                <marker date="1721402488028" expanded="true" signature="2438:2654" placeholder="SELECT count..." />
-                <marker date="1721402488028" expanded="true" signature="4382:5012" placeholder="SELECT id, q..." />
-                <marker date="1721402488028" expanded="true" signature="5161:5206" placeholder="SELECT * FRO..." />
-                <marker date="1721402488028" expanded="true" signature="5407:5525" placeholder="SELECT * FRO..." />
-                <marker date="1721402488028" expanded="true" signature="5664:5769" placeholder="SELECT * FRO..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/laravel_app/app/Models/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.346154" vertical-offset="2187" max-vertical-offset="2737">
-              <caret line="150" column="65" selection-start-line="150" selection-start-column="65" selection-end-line="150" selection-end-column="65" />
-              <folding>
-                <marker date="1721401611396" expanded="true" signature="2865:2967" placeholder="SELECT count..." />
-                <marker date="1721401611396" expanded="true" signature="2865:2997" placeholder="SELECT count..." />
-                <marker date="1721401611396" expanded="true" signature="4174:4408" placeholder="SELECT id, f..." />
-                <marker date="1721401611396" expanded="true" signature="4600:4714" placeholder="SELECT id, f..." />
-                <marker date="1721401611396" expanded="true" signature="4600:4724" placeholder="SELECT id, f..." />
-                <marker date="1721401611396" expanded="true" signature="4600:4787" placeholder="SELECT GROUP..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -170,9 +85,7 @@
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/list_post.blade 2.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/Quotes.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/list_post.blade.php" />
-        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/QuoteController.php" />
         <option value="$PROJECT_DIR$/_notes/my-quotes.liquid" />
-        <option value="$PROJECT_DIR$/_notes/main-product.liquid" />
         <option value="$PROJECT_DIR$/laravel_app/app/Http/Middleware/RedirectIfAuthenticated.php" />
         <option value="$PROJECT_DIR$/laravel_app/resources/views/backend/users/edit.blade.php" />
         <option value="$PROJECT_DIR$/laravel_app/routes/web.php" />
@@ -186,6 +99,8 @@
         <option value="$PROJECT_DIR$/laravel_app/app/Http/Controllers/Admin/HomeController.php" />
         <option value="$PROJECT_DIR$/laravel_app/app/Http/Controllers/Admin/QuoteController.php" />
         <option value="$PROJECT_DIR$/laravel_app/resources/views/backend/layout/sidebar.blade.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/QuoteController.php" />
+        <option value="$PROJECT_DIR$/_notes/main-product.liquid" />
       </list>
     </option>
   </component>
@@ -222,6 +137,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -532,12 +448,11 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../haulwayz-freight-broker-portal" />
+    <property name="last_opened_file_path" value="E:/xampp/htdocs/pro_dev/home-warranty" />
     <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
@@ -604,19 +519,19 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25189108" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25945538" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39072847" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39072847" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -642,10 +557,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_notes/data.txt">
+    <entry file="file://$PROJECT_DIR$/laravel_app/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="442">
-          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -846,19 +761,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_notes/main-product.liquid">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8188277" vertical-offset="16182" max-vertical-offset="16745">
-          <caret line="979" column="0" selection-start-line="979" selection-start-column="0" selection-end-line="979" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_notes/data.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.60390764" vertical-offset="0" max-vertical-offset="563">
           <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -866,7 +772,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8188277" vertical-offset="6764" max-vertical-offset="7327">
           <caret line="425" column="0" selection-start-line="425" selection-start-column="0" selection-end-line="425" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -874,7 +779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24727273" vertical-offset="357" max-vertical-offset="969">
           <caret line="37" column="39" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -882,11 +786,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7802607" vertical-offset="4426" max-vertical-offset="10557">
           <caret line="297" column="89" selection-start-line="297" selection-start-column="89" selection-end-line="297" selection-end-column="89" />
-          <folding>
-            <marker date="1721388462267" expanded="true" signature="-1:-1" placeholder="Select * fro..CustomerType..." />
-            <marker date="1721388462267" expanded="true" signature="-1:-1" placeholder="Select * fro..Customer..." />
-            <marker date="1721388462267" expanded="true" signature="-1:-1" placeholder="select * fro..Customer..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -894,7 +793,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5065177" vertical-offset="408" max-vertical-offset="2006">
           <caret line="40" column="50" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -902,15 +800,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41527003" vertical-offset="2735" max-vertical-offset="3298">
           <caret line="174" column="68" selection-start-line="174" selection-start-column="68" selection-end-line="174" selection-end-column="85" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/laravel_app/resources/views/backend/users/list_post.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.0" vertical-offset="0" max-vertical-offset="697">
+        <state vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="697">
           <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -918,7 +814,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.87636364" vertical-offset="11" max-vertical-offset="816">
           <caret line="30" column="44" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -926,7 +821,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.923077" vertical-offset="232" max-vertical-offset="782">
           <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -934,9 +828,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6592179" vertical-offset="513" max-vertical-offset="1887">
           <caret line="120" column="76" selection-start-line="120" selection-start-column="47" selection-end-line="120" selection-end-column="76" />
-          <folding>
-            <element signature="e#2024#7147#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -944,11 +835,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.08637236" vertical-offset="453" max-vertical-offset="3604">
           <caret line="35" column="49" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="49" />
-          <folding>
-            <element signature="e#5352#9303#0#PHP" expanded="false" />
-            <element signature="e#9402#10576#0#PHP" expanded="false" />
-            <element signature="e#10581#11032#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -956,7 +842,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.2307692" vertical-offset="477" max-vertical-offset="1088">
           <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -964,59 +849,58 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30545455" vertical-offset="1617" max-vertical-offset="2244">
           <caret line="105" column="37" selection-start-line="105" selection-start-column="37" selection-end-line="105" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/laravel_app/app/Models/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.346154" vertical-offset="2187" max-vertical-offset="2737">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2187" max-vertical-offset="2737">
           <caret line="150" column="65" selection-start-line="150" selection-start-column="65" selection-end-line="150" selection-end-column="65" />
-          <folding>
-            <marker date="1721401611396" expanded="true" signature="2865:2967" placeholder="SELECT count..." />
-            <marker date="1721401611396" expanded="true" signature="2865:2997" placeholder="SELECT count..." />
-            <marker date="1721401611396" expanded="true" signature="4174:4408" placeholder="SELECT id, f..." />
-            <marker date="1721401611396" expanded="true" signature="4600:4714" placeholder="SELECT id, f..." />
-            <marker date="1721401611396" expanded="true" signature="4600:4724" placeholder="SELECT id, f..." />
-            <marker date="1721401611396" expanded="true" signature="4600:4787" placeholder="SELECT GROUP..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/laravel_app/app/Models/Quotes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.115385" vertical-offset="874" max-vertical-offset="2601">
+        <state vertical-scroll-proportion="0.0" vertical-offset="874" max-vertical-offset="2601">
           <caret line="74" column="14" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="14" />
-          <folding>
-            <marker date="1721402488028" expanded="true" signature="2438:2654" placeholder="SELECT count..." />
-            <marker date="1721402488028" expanded="true" signature="4382:5012" placeholder="SELECT id, q..." />
-            <marker date="1721402488028" expanded="true" signature="5161:5206" placeholder="SELECT * FRO..." />
-            <marker date="1721402488028" expanded="true" signature="5407:5525" placeholder="SELECT * FRO..." />
-            <marker date="1721402488028" expanded="true" signature="5664:5769" placeholder="SELECT * FRO..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/laravel_app/resources/views/backend/users/list.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="1513">
+        <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="1513">
           <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/laravel_app/app/Http/Controllers/Admin/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.076923" vertical-offset="1088" max-vertical-offset="2839">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1088" max-vertical-offset="2839">
           <caret line="96" column="89" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel_app/app/Http/Controllers/Admin/SampleController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.5" vertical-offset="3859" max-vertical-offset="5712">
+          <caret line="250" column="76" selection-start-line="250" selection-start-column="76" selection-end-line="250" selection-end-column="76" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel_app/resources/views/backend/layout/sidebar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923" vertical-offset="459" max-vertical-offset="2006">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/laravel_app/app/Http/Controllers/Admin/QuoteController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.6538463" vertical-offset="2999" max-vertical-offset="10200">
-          <caret line="228" column="9" selection-start-line="228" selection-start-column="9" selection-end-line="228" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.33267716" vertical-offset="3979" max-vertical-offset="10200">
+          <caret line="290" column="33" selection-start-line="290" selection-start-column="20" selection-end-line="290" selection-end-column="33" />
           <folding>
             <element signature="e#4259#6313#0#PHP" expanded="false" />
           </folding>
@@ -1025,24 +909,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/laravel_app/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="544">
-          <caret line="26" column="45" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
+        <state vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="544">
+          <caret line="23" column="72" selection-start-line="23" selection-start-column="72" selection-end-line="23" selection-end-column="72" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/laravel_app/app/Http/Controllers/Admin/SampleController.php">
+    <entry file="file://$PROJECT_DIR$/_notes/main-product.liquid">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="13.618182" vertical-offset="4064" max-vertical-offset="5712">
-          <caret line="205" column="39" selection-start-line="205" selection-start-column="20" selection-end-line="205" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel_app/resources/views/backend/layout/sidebar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0037243948" vertical-offset="1460" max-vertical-offset="2006">
-          <caret line="86" column="10" selection-start-line="86" selection-start-column="10" selection-end-line="86" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.8188277" vertical-offset="16641" max-vertical-offset="17204">
+          <caret line="1006" column="0" selection-start-line="1006" selection-start-column="0" selection-end-line="1006" selection-end-column="0" />
           <folding />
         </state>
       </provider>
